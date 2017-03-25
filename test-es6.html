@@ -57,30 +57,99 @@
      let numbers = [];
 
      for (var i=0; i<100; i++){
-         numbers[i] = i;
+       numbers[i] = i;
      }
      //statment bodies
      let fives = [];
      numbers.forEach(v => {
-         if (v % 5 === 0)
-             fives.push(v);
+       if (v % 5 === 0)
+         fives.push(v);
      });
 
      assert(fives.length == 20, "100 contains 20 (mod x 5) numbers");
 
      // Lexical this
      var bob = {
-         _name: "Bob",
-         _friends: ["Andy", "John", "Jay"],
-         printFriends() {
-             this._friends.forEach(f =>
-                 console.log(this._name + " knows " + f));
-         }
+       _name: "Bob",
+       _friends: ["Andy", "John", "Jay"],
+       printFriends() {
+         this._friends.forEach(f =>
+           console.log(this._name + " knows " + f));
+       }
      }
 
      bob.printFriends()
-         
-         
+
+	 const getASTNode = () => (
+	   {
+		 op: 5,
+		 lhs: {
+		   op:7
+		 },
+		 rhs: 9
+	   });
+
+	 assert(getASTNode().lhs.op == 7, "arrow function");
+	 
+	 
+	 // **Destructuring**
+	 // list matching
+	 var [a, , b] = [1,2,3];
+	 assert(a == 1 && b == 3, "destructure array");
+
+	 // object matching
+	 var { op: a, lhs: { op: b }, rhs: c } = getASTNode()
+	 assert(a == 5 && b == 7 && c == 9, "destructure object");
+	 
+	 // object matching shorthand
+	 // binds `op`, `lhs` and `rhs` in scope
+	 var {op, lhs, rhs} = getASTNode()
+	 assert(op == 5 && lhs.op == 7 && rhs == 9, "destructure object matching");
+
+	 // Can be used in parameter position
+	 function g({name: x}) {
+	   console.log(x);
+	 }
+	 g({name: 5})
+
+	 // Fail-soft destructuring
+	 var [a] = [];
+	 assert(a === undefined, "Fail-soft destructuring");
+
+	 // Fail-soft destructuring with defaults
+	 var [a = 1] = [];
+	 assert(a === 1, "Fail-soft destructuring with defaults");
+
+	 /* 
+	  * 	 Default + Rest + Spread
+	  * 
+	  * 	 Callee-evaluated default parameter values. Turn an array into
+	  * 	 consecutive arguments in a function call. Bind trailing
+	  * 	 parameters to an array. Rest replaces the need for arguments and
+	  * 	 addresses common cases more directly.
+	  * */
+
+	 let f1 = (x, y=12) => {
+	   // y is 12 if not passed (or passed as undefined)
+	   return x + y;
+	 }
+	 assert(f1(3) == 15, f1(3) + " test default arguments");
+
+	 let f0 = (x, y=12) => x + y
+	 //same as above
+	 assert(f0(3) == 15, f0(3) + " test default arguments");
+
+	 let f2 = (x, ...y) => {
+	   // y is an Array
+	   console.log("y =", y);
+	   return x * y.length;
+	 };
+	 assert(f2(3, "hello", true) == 6, "testing rest");
+
+	 let f3 = (x, y, z) => x + y + z
+	 // Pass each elem of array as argument
+	 assert(f3(...[1,2,3]) == 6, "testing spread");
+	 
 
     </script>
 
