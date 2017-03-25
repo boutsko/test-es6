@@ -47,10 +47,40 @@
 	 assert( odds == "3,5,7,9", odds + " test odds");
 
 	 var nums = evens.map((v, i) => v + i); // i is increment 1,2,3...
-	 assert( nums.length == 4 && typeof(nums) == "object" && nums == "2,5,8,11", nums + " test nums array"); //don't get why "2,5,8,11"
+	 assert( nums.length == 4 && typeof(nums) == "object" && nums == "2,5,8,11", nums + " test nums array"); // incr by i "2,5,8,11"
 
 	 var pairs = evens.map(v => ({even: v, odd: v + 1}));
-	 assert( pairs == [{even: 2, odd: 3}, {even: 4, odd: 5}, {even: 6, odd: 7}, {even: 8, odd: 9}], "figure pairs") 
+	 assert( pairs == [{even: 2, odd: 3}, {even: 4, odd: 5}, {even: 6, odd: 7}, {even: 8, odd: 9}], "figure pairs");
+
+     //     evens.map(v => alert(`${v}`));
+
+     let numbers = [];
+
+     for (var i=0; i<100; i++){
+         numbers[i] = i;
+     }
+     //statment bodies
+     let fives = [];
+     numbers.forEach(v => {
+         if (v % 5 === 0)
+             fives.push(v);
+     });
+
+     assert(fives.length == 20, "100 contains 20 (mod x 5) numbers");
+
+     // Lexical this
+     var bob = {
+         _name: "Bob",
+         _friends: ["Andy", "John", "Jay"],
+         printFriends() {
+             this._friends.forEach(f =>
+                 console.log(this._name + " knows " + f));
+         }
+     }
+
+     bob.printFriends()
+         
+         
 
     </script>
 

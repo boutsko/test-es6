@@ -1,5 +1,11 @@
 
-/Users/sampai/Learn/JS/testing/test-es6.html
+/tmp/test-es6/test-es6.html
 
 https://babeljs.io/learn-es2015/#es6features
 https://github.com/lukehoban/es6features#readme
+
+Текстовый туториал по React.js и Redux на русском / Хабрахабр
+https://maxfarseer.gitbooks.io/redux-course-ru/content/eslint.html
+
+react vs angular
+http://www.google.ru/url?q=https://habrahabr.ru/post/274523/&sa=U&ved=0ahUKEwjsxMm57O_SAhWDZpoKHRc6CI8QFggnMAM&sig2=Rj8V_pxNJFBeybtIyjpxLQ&usg=AFQjCNHLoB-EDKECALE4ALOKbZCCwYLuCQ
