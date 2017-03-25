@@ -8,36 +8,41 @@
   <body>
     <script type="text/javascript">
 
-	function outer(){
+	 function outer(){
 
-		var a = 1;
+	   var a = 1;
 
-		function inner(){ /* does nothing */ }
+	   function inner(){
+		 var b = 1009;
+	   }
 
-		var b = 2;
+	   var b = 2;
 
-		if (a == 1) {
-			var c = 3;
+	   if (a == 1) {
+		 var c = 3;
 
-		}
-		
-// test block
-	  assert(true,"test");
-	  assert(typeof outer==='function',
-      "outer() is in scope");
-	  assert(typeof a==='number',
-      "a is in scope");
-	  assert(typeof inner==='function',
-      "inner() is in scope");
-	  assert(typeof b==='number',
-      "b is in scope");
-	  assert(typeof c==='number',
-      "c is in scope");
-// end of test block
+	   }
+	   
+	   // test block
+	   assert(true,"test");
+	   assert(typeof outer==='function',
+			  "outer() is in scope");
+	   assert(typeof a==='number',
+			  "a is in scope");
+	   assert(typeof inner==='function',
+			  "inner() is in scope");
+	   assert(typeof b==='number',
+			  "b is in scope");
+	   assert(typeof c==='number',
+			  "c is in scope");
+	   inner();
+	   assert( b == 1009, b + " inner b is equal to 9");
 
-	}
-	outer();
-	  
+	   // end of test block
+
+	 }
+	 outer();
+	 
     </script>
   </body>
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>babel-standalone</title>
+    <script type="text/javascript" src="./scripts/assert.js"></script>
+    <link href="./styles/assert.css" rel="stylesheet" type="text/css">
+    <!-- Load Babel -->
+    <!-- <script src="https://unpkg.com/babel-standalone@6/babel.js"></script> -->
+    <script src="./scripts/babel.js"></script>
+  </head>
+  <body>
+    <div id="output"></div>
+    <!-- Your custom script here -->
+    <script type="text/babel">
+     const getMessage = () => "Hello World";
+     document.getElementById('output').innerHTML = getMessage();
+    </script>
+
+    <script type="text/babel">
+     const getMessage = () => "Hello World";
+     let getMessageWithArgument = (arg) => `Hello ${arg}`;
+
+     let hello = () => "Hello";
+     let world = () => "World";
+
+     const foo = {
+       one: "odin",
+       two: "dva"
+     }
+
+     const { one } = foo
+
+
+     // test block
+
+     assert(true,"*Testing Babel*");
+     assert( getMessage() == 'Hello World',  " run babel");
+     assert( getMessageWithArgument(world()) == 'Hello World', world() + " run babel");
+     assert( one == "odin", " Test deconstruction");
+
+     // end of test block
+    </script>
+
+  </body>
+</html>
+
