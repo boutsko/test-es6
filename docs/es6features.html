@@ -1,0 +1,1362 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+
+
+  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/frameworks-5b61aadc846f0818981ceec31b49c475fb084c163fdec5efbc2c21ef539092a9.css" media="all" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://assets-cdn.github.com/assets/github-43bbf7e6e7b177c23ca12ba5d5fc9b26944fdb8f2bb890a6579aa7827b205e02.css" media="all" rel="stylesheet" />
+  
+  
+  
+  
+
+  <meta name="viewport" content="width=device-width">
+  
+  <title>lukehoban/es6features: Overview of ECMAScript 6 features</title>
+  <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
+  <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
+  <meta property="fb:app_id" content="1401488693436528">
+
+    
+    <meta content="https://avatars2.githubusercontent.com/u/223467?v=3&amp;s=400" property="og:image" /><meta content="GitHub" property="og:site_name" /><meta content="object" property="og:type" /><meta content="lukehoban/es6features" property="og:title" /><meta content="https://github.com/lukehoban/es6features" property="og:url" /><meta content="es6features - Overview of ECMAScript 6 features" property="og:description" />
+
+  <link rel="assets" href="https://assets-cdn.github.com/">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6MTUyMjEyNDc3OmUwOTljNzc2OGZjNjQ5OTg5NGQzZGI4NTA4MzVjMzcyNDUwYmIzODhkMTc5NzhhNDEwODJlOGUzNjNlYzc4Mjg=--12e8018ccdfdc17c50cfb24c4f617478adef2451">
+  <meta name="pjax-timeout" content="1000">
+  <link rel="sudo-modal" href="/sessions/sudo_modal">
+  <meta name="request-id" content="C397:66FD:1182D7C:1C238B3:58D6223C" data-pjax-transient>
+  
+
+  <meta name="selected-link" value="repo_source" data-pjax-transient>
+
+  <meta name="google-site-verification" content="KT5gs8h0wvaagLKAVWq8bbeNwnZZK1r1XQysX3xurLU">
+<meta name="google-site-verification" content="ZzhVyEFwb7w3e0-uOTltm8Jsck2F5StVihD0exw2fsA">
+    <meta name="google-analytics" content="UA-3769691-2">
+
+<meta content="collector.githubapp.com" name="octolytics-host" /><meta content="github" name="octolytics-app-id" /><meta content="https://collector.githubapp.com/github-external/browser_event" name="octolytics-event-url" /><meta content="C397:66FD:1182D7C:1C238B3:58D6223C" name="octolytics-dimension-request_id" /><meta content="11396261" name="octolytics-actor-id" /><meta content="boutsko" name="octolytics-actor-login" /><meta content="0e364867cc3fe1b6ce084918ef67e2f91227a12fb88378c1dc222f55858f1ebc" name="octolytics-actor-hash" />
+<meta content="/&lt;user-name&gt;/&lt;repo-name&gt;" data-pjax-transient="true" name="analytics-location" />
+
+
+
+
+  <meta class="js-ga-set" name="dimension1" content="Logged In">
+
+
+  
+
+      <meta name="hostname" content="github.com">
+  <meta name="user-login" content="boutsko">
+
+      <meta name="expected-hostname" content="github.com">
+    <meta name="js-proxy-site-detection-payload" content="ZmEwYzY3N2VlMGYzZDYzZmNkYzBkMmMwZTc0NmUxNjE1NzA1M2Y1MWU5OTJmNWEwM2EyYjE3NTM4OTQ3NWEwMXx7InJlbW90ZV9hZGRyZXNzIjoiNDYuMTU4LjE4NS4zMSIsInJlcXVlc3RfaWQiOiJDMzk3OjY2RkQ6MTE4MkQ3QzoxQzIzOEIzOjU4RDYyMjNDIiwidGltZXN0YW1wIjoxNDkwNDI4NDc3LCJob3N0IjoiZ2l0aHViLmNvbSJ9">
+
+
+  <meta name="html-safe-nonce" content="4c474238635883dd6d9b7eacd3b9e1746f80491e">
+
+  <meta http-equiv="x-pjax-version" content="e58fefb6792a19d68c1732abd53bb24b">
+  
+
+    
+  <meta name="description" content="es6features - Overview of ECMAScript 6 features">
+  <meta name="go-import" content="github.com/lukehoban/es6features git https://github.com/lukehoban/es6features.git">
+
+  <meta content="223467" name="octolytics-dimension-user_id" /><meta content="lukehoban" name="octolytics-dimension-user_login" /><meta content="17375436" name="octolytics-dimension-repository_id" /><meta content="lukehoban/es6features" name="octolytics-dimension-repository_nwo" /><meta content="true" name="octolytics-dimension-repository_public" /><meta content="false" name="octolytics-dimension-repository_is_fork" /><meta content="17375436" name="octolytics-dimension-repository_network_root_id" /><meta content="lukehoban/es6features" name="octolytics-dimension-repository_network_root_nwo" />
+        <link href="https://github.com/lukehoban/es6features/commits/master.atom" rel="alternate" title="Recent Commits to es6features:master" type="application/atom+xml">
+
+
+    <link rel="canonical" href="https://github.com/lukehoban/es6features" data-pjax-transient>
+
+
+  <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
+
+  <meta name="browser-errors-url" content="https://api.github.com/_private/browser/errors">
+
+  <link rel="mask-icon" href="https://assets-cdn.github.com/pinned-octocat.svg" color="#000000">
+  <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+
+<meta name="theme-color" content="#1e2327">
+
+
+
+  </head>
+
+  <body class="logged-in env-production false">
+    
+
+
+  <div class="position-relative js-header-wrapper ">
+    <a href="#start-of-content" tabindex="1" class="accessibility-aid js-skip-to-content">Skip to content</a>
+    <div id="js-pjax-loader-bar" class="pjax-loader-bar"><div class="progress"></div></div>
+
+    
+    
+    
+
+
+
+        
+<div class="header" role="banner">
+  <div class="container clearfix">
+    <a class="header-logo-invertocat" href="https://github.com/" data-hotkey="g d" aria-label="Homepage" data-ga-click="Header, go to dashboard, icon:logo">
+  <svg aria-hidden="true" class="octicon octicon-mark-github" height="32" version="1.1" viewBox="0 0 16 16" width="32"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+
+
+        <div class="header-search scoped-search site-scoped-search js-site-search" role="search">
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/lukehoban/es6features/search" class="js-site-search-form" data-scoped-search-url="/lukehoban/es6features/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+    <label class="form-control header-search-wrapper js-chromeless-input-container">
+        <a href="/lukehoban/es6features" class="header-search-scope no-underline">This repository</a>
+      <input type="text"
+        class="form-control header-search-input js-site-search-focus js-site-search-field is-clearable"
+        data-hotkey="s"
+        name="q"
+        value=""
+        placeholder="Search"
+        aria-label="Search this repository"
+        data-unscoped-placeholder="Search GitHub"
+        data-scoped-placeholder="Search"
+        autocapitalize="off">
+        <input type="hidden" class="js-site-search-type-field" name="type" >
+    </label>
+</form></div>
+
+
+      <ul class="header-nav float-left" role="navigation">
+        <li class="header-nav-item">
+          <a href="/pulls" aria-label="Pull requests you created" class="js-selected-navigation-item header-nav-link" data-ga-click="Header, click, Nav menu - item:pulls context:user" data-hotkey="g p" data-selected-links="/pulls /pulls/assigned /pulls/mentioned /pulls">
+            Pull requests
+</a>        </li>
+        <li class="header-nav-item">
+          <a href="/issues" aria-label="Issues you created" class="js-selected-navigation-item header-nav-link" data-ga-click="Header, click, Nav menu - item:issues context:user" data-hotkey="g i" data-selected-links="/issues /issues/assigned /issues/mentioned /issues">
+            Issues
+</a>        </li>
+          <li class="header-nav-item">
+            <a class="header-nav-link" href="https://gist.github.com/" data-ga-click="Header, go to gist, text:gist">Gist</a>
+          </li>
+      </ul>
+
+    
+<ul class="header-nav user-nav float-right" id="user-links">
+  <li class="header-nav-item">
+    
+    <a href="/notifications" aria-label="You have unread notifications" class="header-nav-link notification-indicator tooltipped tooltipped-s js-socket-channel js-notification-indicator " data-channel="notification-changed:11396261" data-ga-click="Header, go to notifications, icon:unread" data-hotkey="g n">
+        <span class="mail-status unread"></span>
+        <svg aria-hidden="true" class="octicon octicon-bell float-left" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 12v1H0v-1l.73-.58c.77-.77.81-2.55 1.19-4.42C2.69 3.23 6 2 6 2c0-.55.45-1 1-1s1 .45 1 1c0 0 3.39 1.23 4.16 5 .38 1.88.42 3.66 1.19 4.42l.66.58H14zm-7 4c1.11 0 2-.89 2-2H5c0 1.11.89 2 2 2z"/></svg>
+</a>
+  </li>
+
+  <li class="header-nav-item dropdown js-menu-container">
+    <a class="header-nav-link tooltipped tooltipped-s js-menu-target" href="/new"
+       aria-label="Create new…"
+       data-ga-click="Header, create new, icon:add">
+      <svg aria-hidden="true" class="octicon octicon-plus float-left" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5z"/></svg>
+      <span class="dropdown-caret"></span>
+    </a>
+
+    <div class="dropdown-menu-content js-menu-content">
+      <ul class="dropdown-menu dropdown-menu-sw">
+        
+<a class="dropdown-item" href="/new" data-ga-click="Header, create new repository">
+  New repository
+</a>
+
+  <a class="dropdown-item" href="/new/import" data-ga-click="Header, import a repository">
+    Import repository
+  </a>
+
+<a class="dropdown-item" href="https://gist.github.com/" data-ga-click="Header, create new gist">
+  New gist
+</a>
+
+  <a class="dropdown-item" href="/organizations/new" data-ga-click="Header, create new organization">
+    New organization
+  </a>
+
+
+
+  <div class="dropdown-divider"></div>
+  <div class="dropdown-header">
+    <span title="lukehoban/es6features">This repository</span>
+  </div>
+    <a class="dropdown-item" href="/lukehoban/es6features/issues/new" data-ga-click="Header, create new issue">
+      New issue
+    </a>
+
+      </ul>
+    </div>
+  </li>
+
+  <li class="header-nav-item dropdown js-menu-container">
+    <a class="header-nav-link name tooltipped tooltipped-sw js-menu-target" href="/boutsko"
+       aria-label="View profile and more"
+       data-ga-click="Header, show menu, icon:avatar">
+      <img alt="@boutsko" class="avatar" src="https://avatars2.githubusercontent.com/u/11396261?v=3&amp;s=40" height="20" width="20">
+      <span class="dropdown-caret"></span>
+    </a>
+
+    <div class="dropdown-menu-content js-menu-content">
+      <div class="dropdown-menu dropdown-menu-sw">
+        <div class="dropdown-header header-nav-current-user css-truncate">
+          Signed in as <strong class="css-truncate-target">boutsko</strong>
+        </div>
+
+        <div class="dropdown-divider"></div>
+
+        <a class="dropdown-item" href="/boutsko" data-ga-click="Header, go to profile, text:your profile">
+          Your profile
+        </a>
+        <a class="dropdown-item" href="/boutsko?tab=stars" data-ga-click="Header, go to starred repos, text:your stars">
+          Your stars
+        </a>
+        <a class="dropdown-item" href="/explore" data-ga-click="Header, go to explore, text:explore">
+          Explore
+        </a>
+          <a class="dropdown-item" href="/integrations" data-ga-click="Header, go to integrations, text:integrations">
+            Integrations
+          </a>
+        <a class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">
+          Help
+        </a>
+
+        <div class="dropdown-divider"></div>
+
+        <a class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">
+          Settings
+        </a>
+
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="XNdxOQIWj6MYV6wl1xXFsI1hhvju6Yp75P3hce25lxtDuztDZaUCTws6027pzNtgjKQXmluk7amWUZ0ezXlA1g==" /></div>
+          <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
+            Sign out
+          </button>
+</form>      </div>
+    </div>
+  </li>
+</ul>
+
+
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/logout" class="sr-only right-0" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="JqnzZhYdxVWrCs0c1R93qHjVA2DDHu1z0/B/fvmk/mM5xbkcca5Iubhnslfrxml4eRCSAnZTiqGhXAMR2WQprg==" /></div>
+      <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout">
+        Sign out
+      </button>
+</form>  </div>
+</div>
+
+
+      
+
+  </div>
+
+  <div id="start-of-content" class="accessibility-aid"></div>
+
+    <div id="js-flash-container">
+</div>
+
+
+
+  <div role="main">
+        <div itemscope itemtype="http://schema.org/SoftwareSourceCode">
+    <div id="js-repo-pjax-container" data-pjax-container>
+        
+
+
+  <div class="pagehead repohead instapaper_ignore readability-menu experiment-repo-nav">
+    <div class="container repohead-details-container">
+
+
+      <ul class="pagehead-actions">
+  <li>
+        <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/notifications/subscribe" class="js-social-container" data-autosubmit="true" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="AdZ9XY+EydQTKbD8igbYCs8HvbaJmmWD/EfbnaUPAJ26FJKPPYMSiLsMtOoKcmBkNdcFBKpxFk0dfnJma/IuYw==" /></div>      <input class="form-control" id="repository_id" name="repository_id" type="hidden" value="17375436" />
+
+        <div class="select-menu js-menu-container js-select-menu">
+          <a href="/lukehoban/es6features/subscription"
+            class="btn btn-sm btn-with-count select-menu-button js-menu-target" role="button" tabindex="0" aria-haspopup="true"
+            data-ga-click="Repository, click Watch settings, action:files#disambiguate">
+            <span class="js-select-button">
+              <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+              Watch
+            </span>
+          </a>
+          <a class="social-count js-social-count"
+            href="/lukehoban/es6features/watchers"
+            aria-label="1059 users are watching this repository">
+            1,059
+          </a>
+
+        <div class="select-menu-modal-holder">
+          <div class="select-menu-modal subscription-menu-modal js-menu-content" aria-hidden="true">
+            <div class="select-menu-header js-navigation-enable" tabindex="-1">
+              <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+              <span class="select-menu-title">Notifications</span>
+            </div>
+
+              <div class="select-menu-list js-navigation-container" role="menu">
+
+                <div class="select-menu-item js-navigation-item selected" role="menuitem" tabindex="0">
+                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+                  <div class="select-menu-item-text">
+                    <input checked="checked" id="do_included" name="do" type="radio" value="included" />
+                    <span class="select-menu-item-heading">Not watching</span>
+                    <span class="description">Be notified when participating or @mentioned.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+                      Watch
+                    </span>
+                  </div>
+                </div>
+
+                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+                  <div class="select-menu-item-text">
+                    <input id="do_subscribed" name="do" type="radio" value="subscribed" />
+                    <span class="select-menu-item-heading">Watching</span>
+                    <span class="description">Be notified of all conversations.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg aria-hidden="true" class="octicon octicon-eye" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
+                      Unwatch
+                    </span>
+                  </div>
+                </div>
+
+                <div class="select-menu-item js-navigation-item " role="menuitem" tabindex="0">
+                  <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+                  <div class="select-menu-item-text">
+                    <input id="do_ignore" name="do" type="radio" value="ignore" />
+                    <span class="select-menu-item-heading">Ignoring</span>
+                    <span class="description">Never be notified.</span>
+                    <span class="js-select-button-text hidden-select-button-text">
+                      <svg aria-hidden="true" class="octicon octicon-mute" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8 2.81v10.38c0 .67-.81 1-1.28.53L3 10H1c-.55 0-1-.45-1-1V7c0-.55.45-1 1-1h2l3.72-3.72C7.19 1.81 8 2.14 8 2.81zm7.53 3.22l-1.06-1.06-1.97 1.97-1.97-1.97-1.06 1.06L11.44 8 9.47 9.97l1.06 1.06 1.97-1.97 1.97 1.97 1.06-1.06L13.56 8l1.97-1.97z"/></svg>
+                      Stop ignoring
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+</form>
+  </li>
+
+  <li>
+      <div class="js-toggler-container js-social-container starring-container ">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/lukehoban/es6features/unstar" class="starred" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="fg2gQrQrO0u+d9vejkVvzV59eshXMJh4YXMHKJ2VNeJsOwq1XEMm2IVoyXMzzSaofqcArqqbNPL/ZpOGRVoSnQ==" /></div>
+      <button
+        type="submit"
+        class="btn btn-sm btn-with-count js-toggler-target"
+        aria-label="Unstar this repository" title="Unstar lukehoban/es6features"
+        data-ga-click="Repository, click unstar button, action:files#disambiguate; text:Unstar">
+        <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"/></svg>
+        Unstar
+      </button>
+        <a class="social-count js-social-count" href="/lukehoban/es6features/stargazers"
+           aria-label="19285 users starred this repository">
+          19,285
+        </a>
+</form>
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/lukehoban/es6features/star" class="unstarred" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="ri4ouflHX24WqIHydu60p+tyA2tKNW59/G+dDR9dfGkvcO7PLoeoFTDojWlvmo57b63otI/o8++TNZSr3fKI/w==" /></div>
+      <button
+        type="submit"
+        class="btn btn-sm btn-with-count js-toggler-target"
+        aria-label="Star this repository" title="Star lukehoban/es6features"
+        data-ga-click="Repository, click star button, action:files#disambiguate; text:Star">
+        <svg aria-hidden="true" class="octicon octicon-star" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74z"/></svg>
+        Star
+      </button>
+        <a class="social-count js-social-count" href="/lukehoban/es6features/stargazers"
+           aria-label="19285 users starred this repository">
+          19,285
+        </a>
+</form>  </div>
+
+  </li>
+
+  <li>
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/lukehoban/es6features/fork" class="btn-with-count" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="fub2asMas2m3jMscrxspYsEP6YfXyf4oQL9SovHPD3vJrqfFCS7XwAsGRGJtii7KFJhFplG7htv7WlBlgk8dyA==" /></div>
+            <button
+                type="submit"
+                class="btn btn-sm btn-with-count"
+                data-ga-click="Repository, show fork modal, action:files#disambiguate; text:Fork"
+                title="Fork your own copy of lukehoban/es6features to your account"
+                aria-label="Fork your own copy of lukehoban/es6features to your account">
+              <svg aria-hidden="true" class="octicon octicon-repo-forked" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 0 0-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 0 0 2 1a1.993 1.993 0 0 0-1 3.72V6.5l3 3v1.78A1.993 1.993 0 0 0 5 15a1.993 1.993 0 0 0 1-3.72V9.5l3-3V4.72A1.993 1.993 0 0 0 8 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+              Fork
+            </button>
+</form>
+    <a href="/lukehoban/es6features/network" class="social-count"
+       aria-label="1741 users forked this repository">
+      1,741
+    </a>
+  </li>
+</ul>
+
+      <h1 class="public ">
+  <svg aria-hidden="true" class="octicon octicon-repo" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"/></svg>
+  <span class="author" itemprop="author"><a href="/lukehoban" class="url fn" rel="author">lukehoban</a></span><!--
+--><span class="path-divider">/</span><!--
+--><strong itemprop="name"><a href="/lukehoban/es6features" data-pjax="#js-repo-pjax-container">es6features</a></strong>
+
+</h1>
+
+    </div>
+    <div class="container">
+      
+<nav class="reponav js-repo-nav js-sidenav-container-pjax"
+     itemscope
+     itemtype="http://schema.org/BreadcrumbList"
+     role="navigation"
+     data-pjax="#js-repo-pjax-container">
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="/lukehoban/es6features" class="js-selected-navigation-item selected reponav-item" data-hotkey="g c" data-selected-links="repo_source repo_downloads repo_commits repo_releases repo_tags repo_branches /lukehoban/es6features" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-code" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M9.5 3L8 4.5 11.5 8 8 11.5 9.5 13 14 8 9.5 3zm-5 0L0 8l4.5 5L6 11.5 2.5 8 6 4.5 4.5 3z"/></svg>
+      <span itemprop="name">Code</span>
+      <meta itemprop="position" content="1">
+</a>  </span>
+
+    <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <a href="/lukehoban/es6features/issues" class="js-selected-navigation-item reponav-item" data-hotkey="g i" data-selected-links="repo_issues repo_labels repo_milestones /lukehoban/es6features/issues" itemprop="url">
+        <svg aria-hidden="true" class="octicon octicon-issue-opened" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm1 3H6v5h2V4zm0 6H6v2h2v-2z"/></svg>
+        <span itemprop="name">Issues</span>
+        <span class="counter">16</span>
+        <meta itemprop="position" content="2">
+</a>    </span>
+
+  <span itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+    <a href="/lukehoban/es6features/pulls" class="js-selected-navigation-item reponav-item" data-hotkey="g p" data-selected-links="repo_pulls /lukehoban/es6features/pulls" itemprop="url">
+      <svg aria-hidden="true" class="octicon octicon-git-pull-request" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M11 11.28V5c-.03-.78-.34-1.47-.94-2.06C9.46 2.35 8.78 2.03 8 2H7V0L4 3l3 3V4h1c.27.02.48.11.69.31.21.2.3.42.31.69v6.28A1.993 1.993 0 0 0 10 15a1.993 1.993 0 0 0 1-3.72zm-1 2.92c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zM4 3c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v6.56A1.993 1.993 0 0 0 2 15a1.993 1.993 0 0 0 1-3.72V4.72c.59-.34 1-.98 1-1.72zm-.8 10c0 .66-.55 1.2-1.2 1.2-.65 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+      <span itemprop="name">Pull requests</span>
+      <span class="counter">14</span>
+      <meta itemprop="position" content="3">
+</a>  </span>
+
+    <a href="/lukehoban/es6features/projects" class="js-selected-navigation-item reponav-item" data-selected-links="repo_projects new_repo_project repo_project /lukehoban/es6features/projects">
+      <svg aria-hidden="true" class="octicon octicon-project" height="16" version="1.1" viewBox="0 0 15 16" width="15"><path fill-rule="evenodd" d="M10 12h3V2h-3v10zm-4-2h3V2H6v8zm-4 4h3V2H2v12zm-1 1h13V1H1v14zM14 0H1a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h13a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1z"/></svg>
+      Projects
+      <span class="counter">0</span>
+</a>
+
+
+  <a href="/lukehoban/es6features/pulse" class="js-selected-navigation-item reponav-item" data-selected-links="pulse /lukehoban/es6features/pulse">
+    <svg aria-hidden="true" class="octicon octicon-pulse" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M11.5 8L8.8 5.4 6.6 8.5 5.5 1.6 2.38 8H0v2h3.6l.9-1.8.9 5.4L9 8.5l1.6 1.5H14V8z"/></svg>
+    Pulse
+</a>
+  <a href="/lukehoban/es6features/graphs" class="js-selected-navigation-item reponav-item" data-selected-links="repo_graphs repo_contributors /lukehoban/es6features/graphs">
+    <svg aria-hidden="true" class="octicon octicon-graph" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M16 14v1H0V0h1v14h15zM5 13H3V8h2v5zm4 0H7V3h2v10zm4 0h-2V6h2v7z"/></svg>
+    Graphs
+</a>
+
+</nav>
+
+    </div>
+  </div>
+
+<div class="container new-discussion-timeline experiment-repo-nav">
+  <div class="repository-content">
+
+    
+<div class="js-repo-meta-container">
+  <div class="repository-meta mb-0 mb-3 js-repo-meta-edit js-details-container">
+    <div class="repository-meta-content col-11 mb-1">
+          <span class="col-11 text-gray-dark mr-2" itemprop="about">
+            Overview of ECMAScript 6 features
+          </span>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="overall-summary ">
+  <div class="stats-switcher-viewport js-stats-switcher-viewport">
+    <div class="stats-switcher-wrapper">
+    <ul class="numbers-summary">
+      <li class="commits">
+        <a data-pjax href="/lukehoban/es6features/commits/master">
+            <svg aria-hidden="true" class="octicon octicon-history" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M8 13H6V6h5v2H8v5zM7 1C4.81 1 2.87 2.02 1.59 3.59L0 2v4h4L2.5 4.5C3.55 3.17 5.17 2.3 7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-.34.03-.67.09-1H.08C.03 7.33 0 7.66 0 8c0 3.86 3.14 7 7 7s7-3.14 7-7-3.14-7-7-7z"/></svg>
+            <span class="num text-emphasized">
+              109
+            </span>
+            commits
+        </a>
+      </li>
+      <li>
+        <a data-pjax href="/lukehoban/es6features/branches">
+          <svg aria-hidden="true" class="octicon octicon-git-branch" height="16" version="1.1" viewBox="0 0 10 16" width="10"><path fill-rule="evenodd" d="M10 5c0-1.11-.89-2-2-2a1.993 1.993 0 0 0-1 3.72v.3c-.02.52-.23.98-.63 1.38-.4.4-.86.61-1.38.63-.83.02-1.48.16-2 .45V4.72a1.993 1.993 0 0 0-1-3.72C.88 1 0 1.89 0 3a2 2 0 0 0 1 1.72v6.56c-.59.35-1 .99-1 1.72 0 1.11.89 2 2 2 1.11 0 2-.89 2-2 0-.53-.2-1-.53-1.36.09-.06.48-.41.59-.47.25-.11.56-.17.94-.17 1.05-.05 1.95-.45 2.75-1.25S8.95 7.77 9 6.73h-.02C9.59 6.37 10 5.73 10 5zM2 1.8c.66 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2C1.35 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2zm0 12.41c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm6-8c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+          <span class="num text-emphasized">
+            1
+          </span>
+          branch
+        </a>
+      </li>
+
+      <li>
+        <a data-pjax href="/lukehoban/es6features/releases">
+          <svg aria-hidden="true" class="octicon octicon-tag" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M7.73 1.73C7.26 1.26 6.62 1 5.96 1H3.5C2.13 1 1 2.13 1 3.5v2.47c0 .66.27 1.3.73 1.77l6.06 6.06c.39.39 1.02.39 1.41 0l4.59-4.59a.996.996 0 0 0 0-1.41L7.73 1.73zM2.38 7.09c-.31-.3-.47-.7-.47-1.13V3.5c0-.88.72-1.59 1.59-1.59h2.47c.42 0 .83.16 1.13.47l6.14 6.13-4.73 4.73-6.13-6.15zM3.01 3h2v2H3V3h.01z"/></svg>
+          <span class="num text-emphasized">
+            0
+          </span>
+          releases
+        </a>
+      </li>
+
+      <li>
+          <a href="/lukehoban/es6features/graphs/contributors">
+  <svg aria-hidden="true" class="octicon octicon-organization" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M16 12.999c0 .439-.45 1-1 1H7.995c-.539 0-.994-.447-.995-.999H1c-.54 0-1-.561-1-1 0-2.634 3-4 3-4s.229-.409 0-1c-.841-.621-1.058-.59-1-3 .058-2.419 1.367-3 2.5-3s2.442.58 2.5 3c.058 2.41-.159 2.379-1 3-.229.59 0 1 0 1s1.549.711 2.42 2.088C9.196 9.369 10 8.999 10 8.999s.229-.409 0-1c-.841-.62-1.058-.59-1-3 .058-2.419 1.367-3 2.5-3s2.437.581 2.495 3c.059 2.41-.158 2.38-1 3-.229.59 0 1 0 1s3.005 1.366 3.005 4"/></svg>
+    <span class="num text-emphasized">
+      39
+    </span>
+    contributors
+</a>
+
+      </li>
+        <li>
+          <a href="https://github.com/lukehoban/es6features/blob/master/License.md">
+            <svg aria-hidden="true" class="octicon octicon-law" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M7 4c-.83 0-1.5-.67-1.5-1.5S6.17 1 7 1s1.5.67 1.5 1.5S7.83 4 7 4zm7 6c0 1.11-.89 2-2 2h-1c-1.11 0-2-.89-2-2l2-4h-1c-.55 0-1-.45-1-1H8v8c.42 0 1 .45 1 1h1c.42 0 1 .45 1 1H3c0-.55.58-1 1-1h1c0-.55.58-1 1-1h.03L6 5H5c0 .55-.45 1-1 1H3l2 4c0 1.11-.89 2-2 2H2c-1.11 0-2-.89-2-2l2-4H1V5h3c0-.55.45-1 1-1h4c.55 0 1 .45 1 1h3v1h-1l2 4zM2.5 7L1 10h3L2.5 7zM13 10l-1.5-3-1.5 3h3z"/></svg>
+              MIT
+          </a>
+        </li>
+    </ul>
+
+    </div>
+  </div>
+</div>
+
+
+  <include-fragment src="/lukehoban/es6features/show_partial?partial=tree%2Frecently_touched_branches_list"></include-fragment>
+
+<div class="file-navigation in-mid-page">
+
+    <div class="select-menu get-repo-select-menu js-menu-container float-right select-menu-modal-right">
+  <button class="btn btn-sm btn-primary select-menu-button js-menu-target"
+    title="Clone or download this repository"
+    type="button" aria-label="Clone or download this repository" tabindex="0" aria-haspopup="true">
+    <span>Clone or download</span>
+  </button>
+
+  <div class="select-menu-modal-holder dropdown-menu-content js-menu-content" aria-hidden="true">
+    <div class="get-repo-modal dropdown-menu dropdown-menu-sw pb-0 js-toggler-container on">
+      <div class="clone-options https-clone-options">
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/users/set_protocol?protocol_selector=ssh&amp;protocol_type=clone" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="bjbVjfzMZdgkUy+28SaaqmDi80cRW1eb0+xyclwj2JIRMcnrL+dnog/Wfn7Zqaj7mKQJtpE82E3LH794CprKsA==" /></div><button class="btn-link btn-change-protocol js-toggler-target float-right" type="submit">Use SSH</button></form>
+
+        <h4 class="mb-1">
+          Clone with HTTPS
+          <a class="muted-link" href="https://help.github.com/articles/which-remote-url-should-i-use" target="_blank">
+            <svg aria-hidden="true" class="octicon octicon-question" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M6 10h2v2H6v-2zm4-3.5C10 8.64 8 9 8 9H6c0-.55.45-1 1-1h.5c.28 0 .5-.22.5-.5v-1c0-.28-.22-.5-.5-.5h-1c-.28 0-.5.22-.5.5V7H4c0-1.5 1.5-3 3-3s3 1 3 2.5zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"/></svg>
+          </a>
+        </h4>
+        <p class="mb-2 get-repo-decription-text">
+          Use Git or checkout with SVN using the web URL.
+        </p>
+
+        <div class="input-group js-zeroclipboard-container">
+  <input type="text" class="form-control input-monospace input-sm js-zeroclipboard-target js-url-field" value="https://github.com/lukehoban/es6features.git" aria-label="Clone this repository at https://github.com/lukehoban/es6features.git" readonly>
+  <div class="input-group-button">
+    <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><svg aria-hidden="true" class="octicon octicon-clippy" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"/></svg></button>
+  </div>
+</div>
+
+      </div>
+
+        <div class="clone-options ssh-clone-options">
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/users/set_protocol?protocol_selector=https&amp;protocol_type=clone" data-remote="true" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="aftIEnAhW6BuPWcYKnDaOKpeMssjkAgNHvQ/bsoCWiMW/FR0owpZ2kW4NtAC/+hpUhjIOqP3h9sGB/JknLtIAQ==" /></div><button class="btn-link btn-change-protocol js-toggler-target float-right" type="submit">Use HTTPS</button></form>
+
+            <h4 class="mb-1">
+              Clone with SSH
+              <a class="muted-link" href="https://help.github.com/articles/which-remote-url-should-i-use" target="_blank">
+                <svg aria-hidden="true" class="octicon octicon-question" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M6 10h2v2H6v-2zm4-3.5C10 8.64 8 9 8 9H6c0-.55.45-1 1-1h.5c.28 0 .5-.22.5-.5v-1c0-.28-.22-.5-.5-.5h-1c-.28 0-.5.22-.5.5V7H4c0-1.5 1.5-3 3-3s3 1 3 2.5zM7 2.3c3.14 0 5.7 2.56 5.7 5.7s-2.56 5.7-5.7 5.7A5.71 5.71 0 0 1 1.3 8c0-3.14 2.56-5.7 5.7-5.7zM7 1C3.14 1 0 4.14 0 8s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7z"/></svg>
+              </a>
+            </h4>
+            <p class="mb-2 get-repo-decription-text">
+              Use an SSH key and passphrase from account.
+            </p>
+
+            <div class="input-group js-zeroclipboard-container">
+  <input type="text" class="form-control input-monospace input-sm js-zeroclipboard-target js-url-field" value="git@github.com:lukehoban/es6features.git" aria-label="Clone this repository at git@github.com:lukehoban/es6features.git" readonly>
+  <div class="input-group-button">
+    <button aria-label="Copy to clipboard" class="js-zeroclipboard btn btn-sm zeroclipboard-button tooltipped tooltipped-s" data-copied-hint="Copied!" type="button"><svg aria-hidden="true" class="octicon octicon-clippy" height="16" version="1.1" viewBox="0 0 14 16" width="14"><path fill-rule="evenodd" d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z"/></svg></button>
+  </div>
+</div>
+
+        </div>
+
+      <div class="mt-2">
+          <a href="https://mac.github.com" class="btn btn-outline get-repo-btn tooltipped tooltipped-s tooltipped-multiline" aria-label="Clone lukehoban/es6features to your computer and use it in GitHub Desktop.">
+    Open in Desktop
+  </a>
+
+<a href="/lukehoban/es6features/archive/master.zip"
+   class="btn btn-outline get-repo-btn
+"
+   rel="nofollow"
+   data-ga-click="Repository, download zip, location:repo overview">
+  Download ZIP
+</a>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="BtnGroup float-right">
+      
+  <!-- '"` --><!-- </textarea></xmp> --></option></form><form accept-charset="UTF-8" action="/lukehoban/es6features/new/master" class="BtnGroup-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="ekW8c5Ke6IGJuytjEyncPdjOOBwHOC5MQ95fNZuUYK06WbnOvw46sVazZwru3qNm3qeviVsIMt00rsqCnzI5mw==" /></div>
+    <button class="btn btn-sm BtnGroup-item" type="submit" data-disable-with="Creating file…">
+      Create new file
+    </button>
+</form>
+
+      
+  <a href="/lukehoban/es6features/upload/master" class="btn btn-sm BtnGroup-item">
+    Upload files
+  </a>
+
+
+    <a href="/lukehoban/es6features/find/master"
+      class="btn btn-sm empty-icon float-right BtnGroup-item"
+      data-pjax
+      data-hotkey="t"
+      data-ga-click="Repository, find file, location:repo overview">
+      Find file
+    </a>
+  </div>
+
+  
+<div class="select-menu branch-select-menu js-menu-container js-select-menu float-left">
+  <button class=" btn btn-sm select-menu-button js-menu-target css-truncate" data-hotkey="w"
+    
+    type="button" aria-label="Switch branches or tags" tabindex="0" aria-haspopup="true">
+      <i>Branch:</i>
+      <span class="js-select-button css-truncate-target">master</span>
+  </button>
+
+  <div class="select-menu-modal-holder js-menu-content js-navigation-container" data-pjax aria-hidden="true">
+
+    <div class="select-menu-modal">
+      <div class="select-menu-header">
+        <svg aria-label="Close" class="octicon octicon-x js-menu-close" height="16" role="img" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+        <span class="select-menu-title">Switch branches/tags</span>
+      </div>
+
+      <div class="select-menu-filters">
+        <div class="select-menu-text-filter">
+          <input type="text" aria-label="Filter branches/tags" id="context-commitish-filter-field" class="form-control js-filterable-field js-navigation-enable" placeholder="Filter branches/tags">
+        </div>
+        <div class="select-menu-tabs">
+          <ul>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="branches" data-filter-placeholder="Filter branches/tags" class="js-select-menu-tab" role="tab">Branches</a>
+            </li>
+            <li class="select-menu-tab">
+              <a href="#" data-tab-filter="tags" data-filter-placeholder="Find a tag…" class="js-select-menu-tab" role="tab">Tags</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="branches" role="menu">
+
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+            <a class="select-menu-item js-navigation-item js-navigation-open selected"
+               href="/lukehoban/es6features/tree/master"
+               data-name="master"
+               data-skip-pjax="true"
+               rel="nofollow">
+              <svg aria-hidden="true" class="octicon octicon-check select-menu-item-icon" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M12 5l-8 8-4-4 1.5-1.5L4 10l6.5-6.5z"/></svg>
+              <span class="select-menu-item-text css-truncate-target js-select-menu-filter-text">
+                master
+              </span>
+            </a>
+        </div>
+
+          <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+      <div class="select-menu-list select-menu-tab-bucket js-select-menu-tab-bucket" data-tab-filter="tags">
+        <div data-filterable-for="context-commitish-filter-field" data-filterable-type="substring">
+
+
+        </div>
+
+        <div class="select-menu-no-results">Nothing to show</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+      <a href="/lukehoban/es6features/pull/new/master" class="btn btn-sm new-pull-request-btn" data-pjax data-ga-click="Repository, new pull request, location:repo overview">
+        New pull request
+      </a>
+
+  <div class="breadcrumb">
+    
+  </div>
+</div>
+
+
+
+
+
+  <div class="commit-tease js-details-container">
+    <span class="float-right">
+      Latest commit
+      <a class="commit-tease-sha" href="/lukehoban/es6features/commit/8dd2dd92de4d0d099a83b2afa43c65090ed176fb" data-pjax>
+        8dd2dd9
+      </a>
+      <span itemprop="dateModified"><relative-time datetime="2016-07-24T04:51:37Z">Jul 24, 2016</relative-time></span>
+    </span>
+
+
+    <span class="commit-author-section">
+      <img alt="@lukehoban" class="avatar" height="20" src="https://avatars3.githubusercontent.com/u/223467?v=3&amp;s=40" width="20" />
+      <a href="/lukehoban" class="user-mention" rel="author">lukehoban</a>
+        committed on <strong>GitHub</strong>
+    </span>
+
+        <a href="/lukehoban/es6features/commit/8dd2dd92de4d0d099a83b2afa43c65090ed176fb" class="message" data-pjax="true" title="Merge pull request #110 from timbaileyjones/patch-1
+
+Typo: grammer -&gt; grammar">Merge pull request</a> <a href="https://github.com/lukehoban/es6features/pull/110" class="issue-link js-issue-link" data-url="https://github.com/lukehoban/es6features/issues/110" data-id="167216930" data-error-text="Failed to load issue title" data-permission-text="Issue title is private">#110</a> <a href="/lukehoban/es6features/commit/8dd2dd92de4d0d099a83b2afa43c65090ed176fb" class="message" data-pjax="true" title="Merge pull request #110 from timbaileyjones/patch-1
+
+Typo: grammer -&gt; grammar">from timbaileyjones/patch-1</a>
+          <span class="hidden-text-expander inline">
+            <button type="button" class="ellipsis-expander js-details-target">&hellip;</button>
+          </span>
+    </span>
+
+      <div class="commit-desc"><pre class="text-small">Typo: grammer -&gt; grammar</pre></div>
+  </div>
+
+
+
+<div class="file-wrap">
+
+  <a href="/lukehoban/es6features/tree/8dd2dd92de4d0d099a83b2afa43c65090ed176fb" class="d-none js-permalink-shortcut" data-hotkey="y">Permalink</a>
+
+  <table class="files js-navigation-container js-active-navigation-container" data-pjax>
+
+
+    <tbody>
+      <tr class="warning include-fragment-error">
+        <td class="icon"><svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg></td>
+        <td class="content" colspan="3">Failed to load latest commit information.</td>
+      </tr>
+
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-text" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"/></svg>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/lukehoban/es6features/blob/master/License.md" class="js-navigation-open" id="7e5f490e7e52dc10183d8a5b8ae1623a-03d16951675cbbea89b6c355bf9d777de3e486a6" itemprop="license" title="License.md">License.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="/lukehoban/es6features/commit/c9114f9aa31234fd022edd96990bf748face88a0" class="message" data-pjax="true" title="Add a license">Add a license</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2014-10-02T19:11:39Z">Oct 2, 2014</time-ago></span>
+          </td>
+        </tr>
+        <tr class="js-navigation-item">
+          <td class="icon">
+            <svg aria-hidden="true" class="octicon octicon-file-text" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"/></svg>
+            <img alt="" class="spinner" height="16" src="https://assets-cdn.github.com/images/spinners/octocat-spinner-32.gif" width="16" />
+          </td>
+          <td class="content">
+            <span class="css-truncate css-truncate-target"><a href="/lukehoban/es6features/blob/master/README.md" class="js-navigation-open" id="04c6e90faac2675aa89e2176d2eec7d8-a88bfbde0de65d31cb79350b57d389ab4cacfbc6" title="README.md">README.md</a></span>
+          </td>
+          <td class="message">
+            <span class="css-truncate css-truncate-target">
+                  <a href="/lukehoban/es6features/commit/9354b8f68f26bf1931d05251c7d4411808669c97" class="message" data-pjax="true" title="Typo: grammer -&gt; grammar">Typo: grammer -&gt; grammar</a>
+            </span>
+          </td>
+          <td class="age">
+            <span class="css-truncate css-truncate-target"><time-ago datetime="2016-07-24T04:45:19Z">Jul 24, 2016</time-ago></span>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+
+  <div id="readme" class="readme boxed-group clearfix announce instapaper_body md">
+    <h3>
+      <svg aria-hidden="true" class="octicon octicon-book" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M3 5h4v1H3V5zm0 3h4V7H3v1zm0 2h4V9H3v1zm11-5h-4v1h4V5zm0 2h-4v1h4V7zm0 2h-4v1h4V9zm2-6v9c0 .55-.45 1-1 1H9.5l-1 1-1-1H2c-.55 0-1-.45-1-1V3c0-.55.45-1 1-1h5.5l1 1 1-1H15c.55 0 1 .45 1 1zm-8 .5L7.5 3H2v9h6V3.5zm7-.5H9.5l-.5.5V12h6V3z"/></svg>
+      README.md
+    </h3>
+
+      <article class="markdown-body entry-content" itemprop="text"><h1><a id="user-content-ecmascript-6-gitioes6features" class="anchor" href="#ecmascript-6-gitioes6features" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ECMAScript 6 <sup><a href="http://git.io/es6features">git.io/es6features</a></sup></h1>
+<h2><a id="user-content-introduction" class="anchor" href="#introduction" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Introduction</h2>
+<p>ECMAScript 6, also known as ECMAScript 2015, is the latest version of the ECMAScript standard.  ES6 is a significant update to the language, and the first update to the language since ES5 was standardized in 2009. Implementation of these features in major JavaScript engines is <a href="http://kangax.github.io/es5-compat-table/es6/">underway now</a>.</p>
+<p>See the <a href="http://www.ecma-international.org/ecma-262/6.0/">ES6 standard</a> for full specification of the ECMAScript 6 language.</p>
+<p>ES6 includes the following new features:</p>
+<ul>
+<li><a href="#arrows">arrows</a></li>
+<li><a href="#classes">classes</a></li>
+<li><a href="#enhanced-object-literals">enhanced object literals</a></li>
+<li><a href="#template-strings">template strings</a></li>
+<li><a href="#destructuring">destructuring</a></li>
+<li><a href="#default--rest--spread">default + rest + spread</a></li>
+<li><a href="#let--const">let + const</a></li>
+<li><a href="#iterators--forof">iterators + for..of</a></li>
+<li><a href="#generators">generators</a></li>
+<li><a href="#unicode">unicode</a></li>
+<li><a href="#modules">modules</a></li>
+<li><a href="#module-loaders">module loaders</a></li>
+<li><a href="#map--set--weakmap--weakset">map + set + weakmap + weakset</a></li>
+<li><a href="#proxies">proxies</a></li>
+<li><a href="#symbols">symbols</a></li>
+<li><a href="#subclassable-built-ins">subclassable built-ins</a></li>
+<li><a href="#promises">promises</a></li>
+<li><a href="#math--number--string--array--object-apis">math + number + string + array + object APIs</a></li>
+<li><a href="#binary-and-octal-literals">binary and octal literals</a></li>
+<li><a href="#reflect-api">reflect api</a></li>
+<li><a href="#tail-calls">tail calls</a></li>
+</ul>
+<h2><a id="user-content-ecmascript-6-features" class="anchor" href="#ecmascript-6-features" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ECMAScript 6 Features</h2>
+<h3><a id="user-content-arrows" class="anchor" href="#arrows" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Arrows</h3>
+<p>Arrows are a function shorthand using the <code>=&gt;</code> syntax.  They are syntactically similar to the related feature in C#, Java 8 and CoffeeScript.  They support both statement block bodies as well as expression bodies which return the value of the expression.  Unlike functions, arrows share the same lexical <code>this</code> as their surrounding code.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-c"><span class="pl-c">//</span> Expression bodies</span>
+<span class="pl-k">var</span> odds <span class="pl-k">=</span> <span class="pl-smi">evens</span>.<span class="pl-en">map</span>(<span class="pl-smi">v</span> <span class="pl-k">=&gt;</span> v <span class="pl-k">+</span> <span class="pl-c1">1</span>);
+<span class="pl-k">var</span> nums <span class="pl-k">=</span> <span class="pl-smi">evens</span>.<span class="pl-en">map</span>((<span class="pl-smi">v</span>, <span class="pl-smi">i</span>) <span class="pl-k">=&gt;</span> v <span class="pl-k">+</span> i);
+<span class="pl-k">var</span> pairs <span class="pl-k">=</span> <span class="pl-smi">evens</span>.<span class="pl-en">map</span>(<span class="pl-smi">v</span> <span class="pl-k">=&gt;</span> ({even<span class="pl-k">:</span> v, odd<span class="pl-k">:</span> v <span class="pl-k">+</span> <span class="pl-c1">1</span>}));
+
+<span class="pl-c"><span class="pl-c">//</span> Statement bodies</span>
+<span class="pl-smi">nums</span>.<span class="pl-c1">forEach</span>(<span class="pl-smi">v</span> <span class="pl-k">=&gt;</span> {
+  <span class="pl-k">if</span> (v <span class="pl-k">%</span> <span class="pl-c1">5</span> <span class="pl-k">===</span> <span class="pl-c1">0</span>)
+    <span class="pl-smi">fives</span>.<span class="pl-c1">push</span>(v);
+});
+
+<span class="pl-c"><span class="pl-c">//</span> Lexical this</span>
+<span class="pl-k">var</span> bob <span class="pl-k">=</span> {
+  _name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">"</span>Bob<span class="pl-pds">"</span></span>,
+  _friends<span class="pl-k">:</span> [],
+  <span class="pl-en">printFriends</span>() {
+    <span class="pl-c1">this</span>.<span class="pl-smi">_friends</span>.<span class="pl-c1">forEach</span>(<span class="pl-smi">f</span> <span class="pl-k">=&gt;</span>
+      <span class="pl-en">console</span>.<span class="pl-c1">log</span>(<span class="pl-c1">this</span>.<span class="pl-smi">_name</span> <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">"</span> knows <span class="pl-pds">"</span></span> <span class="pl-k">+</span> f));
+  }
+}</pre></div>
+<p>More info: <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions">MDN Arrow Functions</a></p>
+<h3><a id="user-content-classes" class="anchor" href="#classes" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Classes</h3>
+<p>ES6 classes are a simple sugar over the prototype-based OO pattern.  Having a single convenient declarative form makes class patterns easier to use, and encourages interoperability.  Classes support prototype-based inheritance, super calls, instance and static methods and constructors.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">class</span> <span class="pl-en">SkinnedMesh</span> <span class="pl-k">extends</span> <span class="pl-e">THREE</span>.<span class="pl-smi">Mesh</span> {
+  <span class="pl-en">constructor</span>(<span class="pl-smi">geometry</span>, <span class="pl-smi">materials</span>) {
+    <span class="pl-c1">super</span>(geometry, materials);
+
+    <span class="pl-c1">this</span>.<span class="pl-smi">idMatrix</span> <span class="pl-k">=</span> <span class="pl-smi">SkinnedMesh</span>.<span class="pl-en">defaultMatrix</span>();
+    <span class="pl-c1">this</span>.<span class="pl-smi">bones</span> <span class="pl-k">=</span> [];
+    <span class="pl-c1">this</span>.<span class="pl-smi">boneMatrices</span> <span class="pl-k">=</span> [];
+    <span class="pl-c"><span class="pl-c">//</span>...</span>
+  }
+  <span class="pl-en">update</span>(<span class="pl-smi">camera</span>) {
+    <span class="pl-c"><span class="pl-c">//</span>...</span>
+    <span class="pl-c1">super</span>.<span class="pl-en">update</span>();
+  }
+  <span class="pl-k">get</span> <span class="pl-en">boneCount</span>() {
+    <span class="pl-k">return</span> <span class="pl-c1">this</span>.<span class="pl-smi">bones</span>.<span class="pl-c1">length</span>;
+  }
+  <span class="pl-k">set</span> <span class="pl-en">matrixType</span>(<span class="pl-smi">matrixType</span>) {
+    <span class="pl-c1">this</span>.<span class="pl-smi">idMatrix</span> <span class="pl-k">=</span> SkinnedMesh[matrixType]();
+  }
+  <span class="pl-k">static</span> <span class="pl-en">defaultMatrix</span>() {
+    <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-en">THREE.Matrix4</span>();
+  }
+}</pre></div>
+<p>More info: <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes">MDN Classes</a></p>
+<h3><a id="user-content-enhanced-object-literals" class="anchor" href="#enhanced-object-literals" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Enhanced Object Literals</h3>
+<p>Object literals are extended to support setting the prototype at construction, shorthand for <code>foo: foo</code> assignments, defining methods, making super calls, and computing property names with expressions.  Together, these also bring object literals and class declarations closer together, and let object-based design benefit from some of the same conveniences.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> obj <span class="pl-k">=</span> {
+    <span class="pl-c"><span class="pl-c">//</span> __proto__</span>
+    __proto__<span class="pl-k">:</span> theProtoObj,
+    <span class="pl-c"><span class="pl-c">//</span> Shorthand for ‘handler: handler’</span>
+    handler,
+    <span class="pl-c"><span class="pl-c">//</span> Methods</span>
+    <span class="pl-en">toString</span>() {
+     <span class="pl-c"><span class="pl-c">//</span> Super calls</span>
+     <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">"</span>d <span class="pl-pds">"</span></span> <span class="pl-k">+</span> <span class="pl-c1">super</span>.<span class="pl-c1">toString</span>();
+    },
+    <span class="pl-c"><span class="pl-c">//</span> Computed (dynamic) property names</span>
+    [ <span class="pl-s"><span class="pl-pds">'</span>prop_<span class="pl-pds">'</span></span> <span class="pl-k">+</span> (() <span class="pl-k">=&gt;</span> <span class="pl-c1">42</span>)() ]<span class="pl-k">:</span> <span class="pl-c1">42</span>
+};</pre></div>
+<p>More info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types#Object_literals">MDN Grammar and types: Object literals</a></p>
+<h3><a id="user-content-template-strings" class="anchor" href="#template-strings" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Template Strings</h3>
+<p>Template strings provide syntactic sugar for constructing strings.  This is similar to string interpolation features in Perl, Python and more.  Optionally, a tag can be added to allow the string construction to be customized, avoiding injection attacks or constructing higher level data structures from string contents.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-c"><span class="pl-c">//</span> Basic literal string creation</span>
+<span class="pl-s"><span class="pl-pds">`</span>In JavaScript '<span class="pl-cce">\n</span>' is a line-feed.<span class="pl-pds">`</span></span>
+
+<span class="pl-c"><span class="pl-c">//</span> Multiline strings</span>
+<span class="pl-s"><span class="pl-pds">`</span>In JavaScript this is</span>
+<span class="pl-s"> not legal.<span class="pl-pds">`</span></span>
+
+<span class="pl-c"><span class="pl-c">//</span> String interpolation</span>
+<span class="pl-k">var</span> name <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Bob<span class="pl-pds">"</span></span>, time <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>today<span class="pl-pds">"</span></span>;
+<span class="pl-s"><span class="pl-pds">`</span>Hello <span class="pl-s1"><span class="pl-pse">${</span>name<span class="pl-pse">}</span></span>, how are you <span class="pl-s1"><span class="pl-pse">${</span>time<span class="pl-pse">}</span></span>?<span class="pl-pds">`</span></span>
+
+<span class="pl-c"><span class="pl-c">//</span> Construct an HTTP request prefix is used to interpret the replacements and construction</span>
+<span class="pl-c1">POST</span><span class="pl-s"><span class="pl-pds">`</span>http://foo.org/bar?a=<span class="pl-s1"><span class="pl-pse">${</span>a<span class="pl-pse">}</span></span>&amp;b=<span class="pl-s1"><span class="pl-pse">${</span>b<span class="pl-pse">}</span></span></span>
+<span class="pl-s">     Content-Type: application/json</span>
+<span class="pl-s">     X-Credentials: <span class="pl-s1"><span class="pl-pse">${</span>credentials<span class="pl-pse">}</span></span></span>
+<span class="pl-s">     { "foo": <span class="pl-s1"><span class="pl-pse">${</span>foo<span class="pl-pse">}</span></span>,</span>
+<span class="pl-s">       "bar": <span class="pl-s1"><span class="pl-pse">${</span>bar<span class="pl-pse">}</span></span>}<span class="pl-pds">`</span></span>(myOnReadyStateChangeHandler);</pre></div>
+<p>More info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/template_strings">MDN Template Strings</a></p>
+<h3><a id="user-content-destructuring" class="anchor" href="#destructuring" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Destructuring</h3>
+<p>Destructuring allows binding using pattern matching, with support for matching arrays and objects.  Destructuring is fail-soft, similar to standard object lookup <code>foo["bar"]</code>, producing <code>undefined</code> values when not found.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-c"><span class="pl-c">//</span> list matching</span>
+<span class="pl-k">var</span> [a, , b] <span class="pl-k">=</span> [<span class="pl-c1">1</span>,<span class="pl-c1">2</span>,<span class="pl-c1">3</span>];
+
+<span class="pl-c"><span class="pl-c">//</span> object matching</span>
+<span class="pl-k">var</span> { op<span class="pl-k">:</span> a, lhs<span class="pl-k">:</span> { op<span class="pl-k">:</span> b }, rhs<span class="pl-k">:</span> c }
+       <span class="pl-k">=</span> <span class="pl-en">getASTNode</span>()
+
+<span class="pl-c"><span class="pl-c">//</span> object matching shorthand</span>
+<span class="pl-c"><span class="pl-c">//</span> binds `op`, `lhs` and `rhs` in scope</span>
+<span class="pl-k">var</span> {op, lhs, rhs} <span class="pl-k">=</span> <span class="pl-en">getASTNode</span>()
+
+<span class="pl-c"><span class="pl-c">//</span> Can be used in parameter position</span>
+<span class="pl-k">function</span> <span class="pl-en">g</span>({name<span class="pl-k">:</span> x}) {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(x);
+}
+<span class="pl-en">g</span>({name<span class="pl-k">:</span> <span class="pl-c1">5</span>})
+
+<span class="pl-c"><span class="pl-c">//</span> Fail-soft destructuring</span>
+<span class="pl-k">var</span> [a] <span class="pl-k">=</span> [];
+a <span class="pl-k">===</span> <span class="pl-c1">undefined</span>;
+
+<span class="pl-c"><span class="pl-c">//</span> Fail-soft destructuring with defaults</span>
+<span class="pl-k">var</span> [a <span class="pl-k">=</span> <span class="pl-c1">1</span>] <span class="pl-k">=</span> [];
+a <span class="pl-k">===</span> <span class="pl-c1">1</span>;</pre></div>
+<p>More info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment">MDN Destructuring assignment</a></p>
+<h3><a id="user-content-default--rest--spread" class="anchor" href="#default--rest--spread" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Default + Rest + Spread</h3>
+<p>Callee-evaluated default parameter values.  Turn an array into consecutive arguments in a function call.  Bind trailing parameters to an array.  Rest replaces the need for <code>arguments</code> and addresses common cases more directly.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">f</span>(<span class="pl-smi">x</span>, <span class="pl-smi">y</span><span class="pl-k">=</span><span class="pl-c1">12</span>) {
+  <span class="pl-c"><span class="pl-c">//</span> y is 12 if not passed (or passed as undefined)</span>
+  <span class="pl-k">return</span> x <span class="pl-k">+</span> y;
+}
+<span class="pl-en">f</span>(<span class="pl-c1">3</span>) <span class="pl-k">==</span> <span class="pl-c1">15</span></pre></div>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">f</span>(<span class="pl-smi">x</span>, <span class="pl-k">...</span><span class="pl-v">y</span>) {
+  <span class="pl-c"><span class="pl-c">//</span> y is an Array</span>
+  <span class="pl-k">return</span> x <span class="pl-k">*</span> <span class="pl-smi">y</span>.<span class="pl-c1">length</span>;
+}
+<span class="pl-en">f</span>(<span class="pl-c1">3</span>, <span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span>, <span class="pl-c1">true</span>) <span class="pl-k">==</span> <span class="pl-c1">6</span></pre></div>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">f</span>(<span class="pl-smi">x</span>, <span class="pl-smi">y</span>, <span class="pl-smi">z</span>) {
+  <span class="pl-k">return</span> x <span class="pl-k">+</span> y <span class="pl-k">+</span> z;
+}
+<span class="pl-c"><span class="pl-c">//</span> Pass each elem of array as argument</span>
+<span class="pl-en">f</span>(<span class="pl-k">...</span>[<span class="pl-c1">1</span>,<span class="pl-c1">2</span>,<span class="pl-c1">3</span>]) <span class="pl-k">==</span> <span class="pl-c1">6</span></pre></div>
+<p>More MDN info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters">Default parameters</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters">Rest parameters</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_operator">Spread Operator</a></p>
+<h3><a id="user-content-let--const" class="anchor" href="#let--const" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Let + Const</h3>
+<p>Block-scoped binding constructs.  <code>let</code> is the new <code>var</code>.  <code>const</code> is single-assignment.  Static restrictions prevent use before assignment.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">f</span>() {
+  {
+    <span class="pl-k">let</span> x;
+    {
+      <span class="pl-c"><span class="pl-c">//</span> okay, block scoped name</span>
+      <span class="pl-k">const</span> <span class="pl-c1">x</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>sneaky<span class="pl-pds">"</span></span>;
+      <span class="pl-c"><span class="pl-c">//</span> error, const</span>
+      x <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>foo<span class="pl-pds">"</span></span>;
+    }
+    <span class="pl-c"><span class="pl-c">//</span> error, already declared in block</span>
+    <span class="pl-k">let</span> x <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>inner<span class="pl-pds">"</span></span>;
+  }
+}</pre></div>
+<p>More MDN info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let">let statement</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const">const statement</a></p>
+<h3><a id="user-content-iterators--forof" class="anchor" href="#iterators--forof" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Iterators + For..Of</h3>
+<p>Iterator objects enable custom iteration like CLR IEnumerable or Java Iterable.  Generalize <code>for..in</code> to custom iterator-based iteration with <code>for..of</code>.  Don’t require realizing an array, enabling lazy design patterns like LINQ.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">let</span> fibonacci <span class="pl-k">=</span> {
+  [<span class="pl-c1">Symbol</span>.<span class="pl-smi">iterator</span>]() {
+    <span class="pl-k">let</span> pre <span class="pl-k">=</span> <span class="pl-c1">0</span>, cur <span class="pl-k">=</span> <span class="pl-c1">1</span>;
+    <span class="pl-k">return</span> {
+      <span class="pl-en">next</span>() {
+        [pre, cur] <span class="pl-k">=</span> [cur, pre <span class="pl-k">+</span> cur];
+        <span class="pl-k">return</span> { done<span class="pl-k">:</span> <span class="pl-c1">false</span>, value<span class="pl-k">:</span> cur }
+      }
+    }
+  }
+}
+
+<span class="pl-k">for</span> (<span class="pl-k">var</span> n <span class="pl-k">of</span> fibonacci) {
+  <span class="pl-c"><span class="pl-c">//</span> truncate the sequence at 1000</span>
+  <span class="pl-k">if</span> (n <span class="pl-k">&gt;</span> <span class="pl-c1">1000</span>)
+    <span class="pl-k">break</span>;
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(n);
+}</pre></div>
+<p>Iteration is based on these duck-typed interfaces (using <a href="http://typescriptlang.org">TypeScript</a> type syntax for exposition only):</p>
+<div class="highlight highlight-source-ts"><pre><span class="pl-k">interface</span> <span class="pl-en">IteratorResult</span> {
+  done<span class="pl-k">:</span> <span class="pl-c1">boolean</span>;
+  value<span class="pl-k">:</span> <span class="pl-c1">any</span>;
+}
+<span class="pl-k">interface</span> <span class="pl-en">Iterator</span> {
+  next()<span class="pl-k">:</span> <span class="pl-en">IteratorResult</span>;
+}
+<span class="pl-k">interface</span> <span class="pl-en">Iterable</span> {
+  [<span class="pl-c1">Symbol</span>.<span class="pl-smi">iterator</span>]()<span class="pl-k">:</span> <span class="pl-en">Iterator</span>
+}</pre></div>
+<p>More info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of">MDN for...of</a></p>
+<h3><a id="user-content-generators" class="anchor" href="#generators" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Generators</h3>
+<p>Generators simplify iterator-authoring using <code>function*</code> and <code>yield</code>.  A function declared as function* returns a Generator instance.  Generators are subtypes of iterators which include additional  <code>next</code> and <code>throw</code>.  These enable values to flow back into the generator, so <code>yield</code> is an expression form which returns a value (or throws).</p>
+<p>Note: Can also be used to enable ‘await’-like async programming, see also ES7 <code>await</code> proposal.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> fibonacci <span class="pl-k">=</span> {
+  [<span class="pl-c1">Symbol</span>.<span class="pl-smi">iterator</span>]<span class="pl-k">:</span> <span class="pl-k">function</span><span class="pl-k">*</span>() {
+    <span class="pl-k">var</span> pre <span class="pl-k">=</span> <span class="pl-c1">0</span>, cur <span class="pl-k">=</span> <span class="pl-c1">1</span>;
+    <span class="pl-k">for</span> (;;) {
+      <span class="pl-k">var</span> temp <span class="pl-k">=</span> pre;
+      pre <span class="pl-k">=</span> cur;
+      cur <span class="pl-k">+=</span> temp;
+      <span class="pl-k">yield</span> cur;
+    }
+  }
+}
+
+<span class="pl-k">for</span> (<span class="pl-k">var</span> n <span class="pl-k">of</span> fibonacci) {
+  <span class="pl-c"><span class="pl-c">//</span> truncate the sequence at 1000</span>
+  <span class="pl-k">if</span> (n <span class="pl-k">&gt;</span> <span class="pl-c1">1000</span>)
+    <span class="pl-k">break</span>;
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(n);
+}</pre></div>
+<p>The generator interface is (using <a href="http://typescriptlang.org">TypeScript</a> type syntax for exposition only):</p>
+<div class="highlight highlight-source-ts"><pre><span class="pl-k">interface</span> <span class="pl-en">Generator</span> <span class="pl-k">extends</span> <span class="pl-e">Iterator</span> {
+    next(<span class="pl-v">value</span><span class="pl-k">?</span><span class="pl-k">:</span> <span class="pl-c1">any</span>)<span class="pl-k">:</span> <span class="pl-en">IteratorResult</span>;
+    throw(<span class="pl-v">exception</span><span class="pl-k">:</span> <span class="pl-c1">any</span>);
+}</pre></div>
+<p>More info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols">MDN Iteration protocols</a></p>
+<h3><a id="user-content-unicode" class="anchor" href="#unicode" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Unicode</h3>
+<p>Non-breaking additions to support full Unicode, including new Unicode literal form in strings and new RegExp <code>u</code> mode to handle code points, as well as new APIs to process strings at the 21bit code points level.  These additions support building global apps in JavaScript.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-c"><span class="pl-c">//</span> same as ES5.1</span>
+<span class="pl-s"><span class="pl-pds">"</span>𠮷<span class="pl-pds">"</span></span>.<span class="pl-c1">length</span> <span class="pl-k">==</span> <span class="pl-c1">2</span>
+
+<span class="pl-c"><span class="pl-c">//</span> new RegExp behaviour, opt-in ‘u’</span>
+<span class="pl-s"><span class="pl-pds">"</span>𠮷<span class="pl-pds">"</span></span>.<span class="pl-c1">match</span>(<span class="pl-sr"><span class="pl-pds">/</span><span class="pl-c1">.</span><span class="pl-pds">/</span>u</span>)[<span class="pl-c1">0</span>].<span class="pl-c1">length</span> <span class="pl-k">==</span> <span class="pl-c1">2</span>
+
+<span class="pl-c"><span class="pl-c">//</span> new form</span>
+<span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\u{20BB7}</span><span class="pl-pds">"</span></span><span class="pl-k">==</span><span class="pl-s"><span class="pl-pds">"</span>𠮷<span class="pl-pds">"</span></span><span class="pl-k">==</span><span class="pl-s"><span class="pl-pds">"</span><span class="pl-cce">\uD842\uDFB7</span><span class="pl-pds">"</span></span>
+
+<span class="pl-c"><span class="pl-c">//</span> new String ops</span>
+<span class="pl-s"><span class="pl-pds">"</span>𠮷<span class="pl-pds">"</span></span>.<span class="pl-en">codePointAt</span>(<span class="pl-c1">0</span>) <span class="pl-k">==</span> <span class="pl-c1">0x20BB7</span>
+
+<span class="pl-c"><span class="pl-c">//</span> for-of iterates code points</span>
+<span class="pl-k">for</span>(<span class="pl-k">var</span> c <span class="pl-k">of</span> <span class="pl-s"><span class="pl-pds">"</span>𠮷<span class="pl-pds">"</span></span>) {
+  <span class="pl-en">console</span>.<span class="pl-c1">log</span>(c);
+}</pre></div>
+<p>More info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode">MDN RegExp.prototype.unicode</a></p>
+<h3><a id="user-content-modules" class="anchor" href="#modules" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Modules</h3>
+<p>Language-level support for modules for component definition.  Codifies patterns from popular JavaScript module loaders (AMD, CommonJS). Runtime behaviour defined by a host-defined default loader.  Implicitly async model – no code executes until requested modules are available and processed.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-c"><span class="pl-c">//</span> lib/math.js</span>
+<span class="pl-k">export</span> <span class="pl-k">function</span> <span class="pl-en">sum</span>(<span class="pl-smi">x</span>, <span class="pl-smi">y</span>) {
+  <span class="pl-k">return</span> x <span class="pl-k">+</span> y;
+}
+<span class="pl-k">export</span> <span class="pl-k">var</span> pi <span class="pl-k">=</span> <span class="pl-c1">3.141593</span>;</pre></div>
+<div class="highlight highlight-source-js"><pre><span class="pl-c"><span class="pl-c">//</span> app.js</span>
+<span class="pl-k">import</span> <span class="pl-c1">*</span> <span class="pl-k">as</span> <span class="pl-smi">math</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">"</span>lib/math<span class="pl-pds">"</span></span>;
+<span class="pl-en">alert</span>(<span class="pl-s"><span class="pl-pds">"</span>2π = <span class="pl-pds">"</span></span> <span class="pl-k">+</span> <span class="pl-smi">math</span>.<span class="pl-en">sum</span>(<span class="pl-smi">math</span>.<span class="pl-smi">pi</span>, <span class="pl-smi">math</span>.<span class="pl-smi">pi</span>));</pre></div>
+<div class="highlight highlight-source-js"><pre><span class="pl-c"><span class="pl-c">//</span> otherApp.js</span>
+<span class="pl-k">import</span> {<span class="pl-smi">sum</span>, <span class="pl-smi">pi</span>} <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">"</span>lib/math<span class="pl-pds">"</span></span>;
+<span class="pl-en">alert</span>(<span class="pl-s"><span class="pl-pds">"</span>2π = <span class="pl-pds">"</span></span> <span class="pl-k">+</span> <span class="pl-en">sum</span>(pi, pi));</pre></div>
+<p>Some additional features include <code>export default</code> and <code>export *</code>:</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-c"><span class="pl-c">//</span> lib/mathplusplus.js</span>
+<span class="pl-k">export</span> <span class="pl-c1">*</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">"</span>lib/math<span class="pl-pds">"</span></span>;
+<span class="pl-k">export</span> <span class="pl-k">var</span> e <span class="pl-k">=</span> <span class="pl-c1">2.71828182846</span>;
+<span class="pl-k">export</span> <span class="pl-c1">default</span> <span class="pl-k">function</span>(<span class="pl-smi">x</span>) {
+    <span class="pl-k">return</span> <span class="pl-c1">Math</span>.<span class="pl-c1">log</span>(x);
+}</pre></div>
+<div class="highlight highlight-source-js"><pre><span class="pl-c"><span class="pl-c">//</span> app.js</span>
+<span class="pl-k">import</span> <span class="pl-smi">ln</span>, {<span class="pl-smi">pi</span>, <span class="pl-smi">e</span>} <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">"</span>lib/mathplusplus<span class="pl-pds">"</span></span>;
+<span class="pl-en">alert</span>(<span class="pl-s"><span class="pl-pds">"</span>2π = <span class="pl-pds">"</span></span> <span class="pl-k">+</span> <span class="pl-en">ln</span>(e)<span class="pl-k">*</span>pi<span class="pl-k">*</span><span class="pl-c1">2</span>);</pre></div>
+<p>More MDN info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import">import statement</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export">export statement</a></p>
+<h3><a id="user-content-module-loaders" class="anchor" href="#module-loaders" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Module Loaders</h3>
+<p>Module loaders support:</p>
+<ul>
+<li>Dynamic loading</li>
+<li>State isolation</li>
+<li>Global namespace isolation</li>
+<li>Compilation hooks</li>
+<li>Nested virtualization</li>
+</ul>
+<p>The default module loader can be configured, and new loaders can be constructed to evaluate and load code in isolated or constrained contexts.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-c"><span class="pl-c">//</span> Dynamic loading – ‘System’ is default loader</span>
+<span class="pl-smi">System</span>.<span class="pl-en">import</span>(<span class="pl-s"><span class="pl-pds">'</span>lib/math<span class="pl-pds">'</span></span>).<span class="pl-en">then</span>(<span class="pl-k">function</span>(<span class="pl-smi">m</span>) {
+  <span class="pl-en">alert</span>(<span class="pl-s"><span class="pl-pds">"</span>2π = <span class="pl-pds">"</span></span> <span class="pl-k">+</span> <span class="pl-smi">m</span>.<span class="pl-en">sum</span>(<span class="pl-smi">m</span>.<span class="pl-smi">pi</span>, <span class="pl-smi">m</span>.<span class="pl-smi">pi</span>));
+});
+
+<span class="pl-c"><span class="pl-c">//</span> Create execution sandboxes – new Loaders</span>
+<span class="pl-k">var</span> loader <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Loader</span>({
+  global<span class="pl-k">:</span> <span class="pl-en">fixup</span>(<span class="pl-c1">window</span>) <span class="pl-c"><span class="pl-c">//</span> replace ‘console.log’</span>
+});
+<span class="pl-smi">loader</span>.<span class="pl-en">eval</span>(<span class="pl-s"><span class="pl-pds">"</span>console.log('hello world!');<span class="pl-pds">"</span></span>);
+
+<span class="pl-c"><span class="pl-c">//</span> Directly manipulate module cache</span>
+<span class="pl-smi">System</span>.<span class="pl-c1">get</span>(<span class="pl-s"><span class="pl-pds">'</span>jquery<span class="pl-pds">'</span></span>);
+<span class="pl-smi">System</span>.<span class="pl-c1">set</span>(<span class="pl-s"><span class="pl-pds">'</span>jquery<span class="pl-pds">'</span></span>, <span class="pl-en">Module</span>({$<span class="pl-k">:</span> $})); <span class="pl-c"><span class="pl-c">//</span> WARNING: not yet finalized</span></pre></div>
+<h3><a id="user-content-map--set--weakmap--weakset" class="anchor" href="#map--set--weakmap--weakset" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Map + Set + WeakMap + WeakSet</h3>
+<p>Efficient data structures for common algorithms.  WeakMaps provides leak-free object-key’d side tables.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-c"><span class="pl-c">//</span> Sets</span>
+<span class="pl-k">var</span> s <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Set</span>();
+<span class="pl-smi">s</span>.<span class="pl-c1">add</span>(<span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span>).<span class="pl-c1">add</span>(<span class="pl-s"><span class="pl-pds">"</span>goodbye<span class="pl-pds">"</span></span>).<span class="pl-c1">add</span>(<span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span>);
+<span class="pl-smi">s</span>.<span class="pl-c1">size</span> <span class="pl-k">===</span> <span class="pl-c1">2</span>;
+<span class="pl-smi">s</span>.<span class="pl-c1">has</span>(<span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span>) <span class="pl-k">===</span> <span class="pl-c1">true</span>;
+
+<span class="pl-c"><span class="pl-c">//</span> Maps</span>
+<span class="pl-k">var</span> m <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Map</span>();
+<span class="pl-smi">m</span>.<span class="pl-c1">set</span>(<span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span>, <span class="pl-c1">42</span>);
+<span class="pl-smi">m</span>.<span class="pl-c1">set</span>(s, <span class="pl-c1">34</span>);
+<span class="pl-smi">m</span>.<span class="pl-c1">get</span>(s) <span class="pl-k">==</span> <span class="pl-c1">34</span>;
+
+<span class="pl-c"><span class="pl-c">//</span> Weak Maps</span>
+<span class="pl-k">var</span> wm <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">WeakMap</span>();
+<span class="pl-smi">wm</span>.<span class="pl-c1">set</span>(s, { extra<span class="pl-k">:</span> <span class="pl-c1">42</span> });
+<span class="pl-smi">wm</span>.<span class="pl-c1">size</span> <span class="pl-k">===</span> <span class="pl-c1">undefined</span>
+
+<span class="pl-c"><span class="pl-c">//</span> Weak Sets</span>
+<span class="pl-k">var</span> ws <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">WeakSet</span>();
+<span class="pl-smi">ws</span>.<span class="pl-c1">add</span>({ data<span class="pl-k">:</span> <span class="pl-c1">42</span> });
+<span class="pl-c"><span class="pl-c">//</span> Because the added object has no other references, it will not be held in the set</span></pre></div>
+<p>More MDN info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map">Map</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set">Set</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap">WeakMap</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet">WeakSet</a></p>
+<h3><a id="user-content-proxies" class="anchor" href="#proxies" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Proxies</h3>
+<p>Proxies enable creation of objects with the full range of behaviors available to host objects.  Can be used for interception, object virtualization, logging/profiling, etc.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-c"><span class="pl-c">//</span> Proxying a normal object</span>
+<span class="pl-k">var</span> target <span class="pl-k">=</span> {};
+<span class="pl-k">var</span> handler <span class="pl-k">=</span> {
+  <span class="pl-en">get</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">receiver</span>, <span class="pl-smi">name</span>) {
+    <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">`</span>Hello, <span class="pl-s1"><span class="pl-pse">${</span>name<span class="pl-pse">}</span></span>!<span class="pl-pds">`</span></span>;
+  }
+};
+
+<span class="pl-k">var</span> p <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Proxy</span>(target, handler);
+<span class="pl-smi">p</span>.<span class="pl-smi">world</span> <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>Hello, world!<span class="pl-pds">'</span></span>;</pre></div>
+<div class="highlight highlight-source-js"><pre><span class="pl-c"><span class="pl-c">//</span> Proxying a function object</span>
+<span class="pl-k">var</span> <span class="pl-en">target</span> <span class="pl-k">=</span> <span class="pl-k">function</span> () { <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">'</span>I am the target<span class="pl-pds">'</span></span>; };
+<span class="pl-k">var</span> handler <span class="pl-k">=</span> {
+  <span class="pl-en">apply</span><span class="pl-k">:</span> <span class="pl-k">function</span> (<span class="pl-smi">receiver</span>, <span class="pl-k">...</span><span class="pl-v">args</span>) {
+    <span class="pl-k">return</span> <span class="pl-s"><span class="pl-pds">'</span>I am the proxy<span class="pl-pds">'</span></span>;
+  }
+};
+
+<span class="pl-k">var</span> p <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">Proxy</span>(target, handler);
+<span class="pl-en">p</span>() <span class="pl-k">===</span> <span class="pl-s"><span class="pl-pds">'</span>I am the proxy<span class="pl-pds">'</span></span>;</pre></div>
+<p>There are traps available for all of the runtime-level meta-operations:</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> handler <span class="pl-k">=</span>
+{
+  get<span class="pl-k">:</span><span class="pl-k">...</span>,
+  set<span class="pl-k">:</span><span class="pl-k">...</span>,
+  has<span class="pl-k">:</span><span class="pl-k">...</span>,
+  deleteProperty<span class="pl-k">:</span><span class="pl-k">...</span>,
+  apply<span class="pl-k">:</span><span class="pl-k">...</span>,
+  construct<span class="pl-k">:</span><span class="pl-k">...</span>,
+  getOwnPropertyDescriptor<span class="pl-k">:</span><span class="pl-k">...</span>,
+  defineProperty<span class="pl-k">:</span><span class="pl-k">...</span>,
+  getPrototypeOf<span class="pl-k">:</span><span class="pl-k">...</span>,
+  setPrototypeOf<span class="pl-k">:</span><span class="pl-k">...</span>,
+  enumerate<span class="pl-k">:</span><span class="pl-k">...</span>,
+  ownKeys<span class="pl-k">:</span><span class="pl-k">...</span>,
+  preventExtensions<span class="pl-k">:</span><span class="pl-k">...</span>,
+  isExtensible<span class="pl-k">:</span><span class="pl-k">...</span>
+}</pre></div>
+<p>More info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy">MDN Proxy</a></p>
+<h3><a id="user-content-symbols" class="anchor" href="#symbols" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Symbols</h3>
+<p>Symbols enable access control for object state.  Symbols allow properties to be keyed by either <code>string</code> (as in ES5) or <code>symbol</code>.  Symbols are a new primitive type. Optional <code>description</code> parameter used in debugging - but is not part of identity.  Symbols are unique (like gensym), but not private since they are exposed via reflection features like <code>Object.getOwnPropertySymbols</code>.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> MyClass <span class="pl-k">=</span> (<span class="pl-k">function</span>() {
+
+  <span class="pl-c"><span class="pl-c">//</span> module scoped symbol</span>
+  <span class="pl-k">var</span> key <span class="pl-k">=</span> <span class="pl-c1">Symbol</span>(<span class="pl-s"><span class="pl-pds">"</span>key<span class="pl-pds">"</span></span>);
+
+  <span class="pl-k">function</span> <span class="pl-en">MyClass</span>(<span class="pl-smi">privateData</span>) {
+    <span class="pl-c1">this</span>[key] <span class="pl-k">=</span> privateData;
+  }
+
+  <span class="pl-smi">MyClass</span>.<span class="pl-c1">prototype</span> <span class="pl-k">=</span> {
+    <span class="pl-en">doStuff</span><span class="pl-k">:</span> <span class="pl-k">function</span>() {
+      <span class="pl-k">...</span> <span class="pl-c1">this</span>[key] <span class="pl-k">...</span>
+    }
+  };
+
+  <span class="pl-k">return</span> MyClass;
+})();
+
+<span class="pl-k">var</span> c <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MyClass</span>(<span class="pl-s"><span class="pl-pds">"</span>hello<span class="pl-pds">"</span></span>)
+c[<span class="pl-s"><span class="pl-pds">"</span>key<span class="pl-pds">"</span></span>] <span class="pl-k">===</span> <span class="pl-c1">undefined</span></pre></div>
+<p>More info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol">MDN Symbol</a></p>
+<h3><a id="user-content-subclassable-built-ins" class="anchor" href="#subclassable-built-ins" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Subclassable Built-ins</h3>
+<p>In ES6, built-ins like <code>Array</code>, <code>Date</code> and DOM <code>Element</code>s can be subclassed.</p>
+<p>Object construction for a function named <code>Ctor</code> now uses two-phases (both virtually dispatched):</p>
+<ul>
+<li>Call <code>Ctor[@@create]</code> to allocate the object, installing any special behavior</li>
+<li>Invoke constructor on new instance to initialize</li>
+</ul>
+<p>The known <code>@@create</code> symbol is available via <code>Symbol.create</code>.  Built-ins now expose their <code>@@create</code> explicitly.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-c"><span class="pl-c">//</span> Pseudo-code of Array</span>
+<span class="pl-k">class</span> <span class="pl-en">Array</span> {
+    <span class="pl-en">constructor</span>(<span class="pl-k">...</span><span class="pl-v">args</span>) { <span class="pl-c">/* ... */</span> }
+    <span class="pl-k">static</span> [<span class="pl-c1">Symbol</span>.<span class="pl-smi">create</span>]() {
+        <span class="pl-c"><span class="pl-c">//</span> Install special [[DefineOwnProperty]]</span>
+        <span class="pl-c"><span class="pl-c">//</span> to magically update 'length'</span>
+    }
+}
+
+<span class="pl-c"><span class="pl-c">//</span> User code of Array subclass</span>
+<span class="pl-k">class</span> <span class="pl-en">MyArray</span> <span class="pl-k">extends</span> <span class="pl-e">Array</span> {
+    <span class="pl-en">constructor</span>(<span class="pl-k">...</span><span class="pl-v">args</span>) { <span class="pl-c1">super</span>(<span class="pl-k">...</span>args); }
+}
+
+<span class="pl-c"><span class="pl-c">//</span> Two-phase 'new':</span>
+<span class="pl-c"><span class="pl-c">//</span> 1) Call @@create to allocate object</span>
+<span class="pl-c"><span class="pl-c">//</span> 2) Invoke constructor on new instance</span>
+<span class="pl-k">var</span> arr <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MyArray</span>();
+arr[<span class="pl-c1">1</span>] <span class="pl-k">=</span> <span class="pl-c1">12</span>;
+<span class="pl-smi">arr</span>.<span class="pl-c1">length</span> <span class="pl-k">==</span> <span class="pl-c1">2</span></pre></div>
+<h3><a id="user-content-math--number--string--array--object-apis" class="anchor" href="#math--number--string--array--object-apis" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Math + Number + String + Array + Object APIs</h3>
+<p>Many new library additions, including core Math libraries, Array conversion helpers, String helpers, and Object.assign for copying.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">Number</span>.<span class="pl-c1">EPSILON</span>
+<span class="pl-c1">Number</span>.<span class="pl-en">isInteger</span>(<span class="pl-c1">Infinity</span>) <span class="pl-c"><span class="pl-c">//</span> false</span>
+<span class="pl-c1">Number</span>.<span class="pl-en">isNaN</span>(<span class="pl-s"><span class="pl-pds">"</span>NaN<span class="pl-pds">"</span></span>) <span class="pl-c"><span class="pl-c">//</span> false</span>
+
+<span class="pl-c1">Math</span>.<span class="pl-c1">acosh</span>(<span class="pl-c1">3</span>) <span class="pl-c"><span class="pl-c">//</span> 1.762747174039086</span>
+<span class="pl-c1">Math</span>.<span class="pl-c1">hypot</span>(<span class="pl-c1">3</span>, <span class="pl-c1">4</span>) <span class="pl-c"><span class="pl-c">//</span> 5</span>
+<span class="pl-c1">Math</span>.<span class="pl-c1">imul</span>(<span class="pl-c1">Math</span>.<span class="pl-c1">pow</span>(<span class="pl-c1">2</span>, <span class="pl-c1">32</span>) <span class="pl-k">-</span> <span class="pl-c1">1</span>, <span class="pl-c1">Math</span>.<span class="pl-c1">pow</span>(<span class="pl-c1">2</span>, <span class="pl-c1">32</span>) <span class="pl-k">-</span> <span class="pl-c1">2</span>) <span class="pl-c"><span class="pl-c">//</span> 2</span>
+
+<span class="pl-s"><span class="pl-pds">"</span>abcde<span class="pl-pds">"</span></span>.<span class="pl-en">includes</span>(<span class="pl-s"><span class="pl-pds">"</span>cd<span class="pl-pds">"</span></span>) <span class="pl-c"><span class="pl-c">//</span> true</span>
+<span class="pl-s"><span class="pl-pds">"</span>abc<span class="pl-pds">"</span></span>.<span class="pl-en">repeat</span>(<span class="pl-c1">3</span>) <span class="pl-c"><span class="pl-c">//</span> "abcabcabc"</span>
+
+<span class="pl-c1">Array</span>.<span class="pl-en">from</span>(<span class="pl-c1">document</span>.<span class="pl-c1">querySelectorAll</span>(<span class="pl-s"><span class="pl-pds">'</span>*<span class="pl-pds">'</span></span>)) <span class="pl-c"><span class="pl-c">//</span> Returns a real Array</span>
+<span class="pl-c1">Array</span>.<span class="pl-en">of</span>(<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>) <span class="pl-c"><span class="pl-c">//</span> Similar to new Array(...), but without special one-arg behavior</span>
+[<span class="pl-c1">0</span>, <span class="pl-c1">0</span>, <span class="pl-c1">0</span>].<span class="pl-en">fill</span>(<span class="pl-c1">7</span>, <span class="pl-c1">1</span>) <span class="pl-c"><span class="pl-c">//</span> [0,7,7]</span>
+[<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>].<span class="pl-c1">find</span>(<span class="pl-smi">x</span> <span class="pl-k">=&gt;</span> x <span class="pl-k">==</span> <span class="pl-c1">3</span>) <span class="pl-c"><span class="pl-c">//</span> 3</span>
+[<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>].<span class="pl-en">findIndex</span>(<span class="pl-smi">x</span> <span class="pl-k">=&gt;</span> x <span class="pl-k">==</span> <span class="pl-c1">2</span>) <span class="pl-c"><span class="pl-c">//</span> 1</span>
+[<span class="pl-c1">1</span>, <span class="pl-c1">2</span>, <span class="pl-c1">3</span>, <span class="pl-c1">4</span>, <span class="pl-c1">5</span>].<span class="pl-en">copyWithin</span>(<span class="pl-c1">3</span>, <span class="pl-c1">0</span>) <span class="pl-c"><span class="pl-c">//</span> [1, 2, 3, 1, 2]</span>
+[<span class="pl-s"><span class="pl-pds">"</span>a<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>b<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>c<span class="pl-pds">"</span></span>].<span class="pl-c1">entries</span>() <span class="pl-c"><span class="pl-c">//</span> iterator [0, "a"], [1,"b"], [2,"c"]</span>
+[<span class="pl-s"><span class="pl-pds">"</span>a<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>b<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>c<span class="pl-pds">"</span></span>].<span class="pl-c1">keys</span>() <span class="pl-c"><span class="pl-c">//</span> iterator 0, 1, 2</span>
+[<span class="pl-s"><span class="pl-pds">"</span>a<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>b<span class="pl-pds">"</span></span>, <span class="pl-s"><span class="pl-pds">"</span>c<span class="pl-pds">"</span></span>].<span class="pl-c1">values</span>() <span class="pl-c"><span class="pl-c">//</span> iterator "a", "b", "c"</span>
+
+<span class="pl-c1">Object</span>.<span class="pl-en">assign</span>(<span class="pl-c1">Point</span>, { origin<span class="pl-k">:</span> <span class="pl-k">new</span> <span class="pl-en">Point</span>(<span class="pl-c1">0</span>,<span class="pl-c1">0</span>) })</pre></div>
+<p>More MDN info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number">Number</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math">Math</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from">Array.from</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/of">Array.of</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/copyWithin">Array.prototype.copyWithin</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">Object.assign</a></p>
+<h3><a id="user-content-binary-and-octal-literals" class="anchor" href="#binary-and-octal-literals" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Binary and Octal Literals</h3>
+<p>Two new numeric literal forms are added for binary (<code>b</code>) and octal (<code>o</code>).</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-c1">0b111110111</span> <span class="pl-k">===</span> <span class="pl-c1">503</span> <span class="pl-c"><span class="pl-c">//</span> true</span>
+<span class="pl-c1">0o767</span> <span class="pl-k">===</span> <span class="pl-c1">503</span> <span class="pl-c"><span class="pl-c">//</span> true</span></pre></div>
+<h3><a id="user-content-promises" class="anchor" href="#promises" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Promises</h3>
+<p>Promises are a library for asynchronous programming.  Promises are a first class representation of a value that may be made available in the future.  Promises are used in many existing JavaScript libraries.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">timeout</span>(<span class="pl-smi">duration</span> <span class="pl-k">=</span> <span class="pl-c1">0</span>) {
+    <span class="pl-k">return</span> <span class="pl-k">new</span> <span class="pl-en">Promise</span>((<span class="pl-smi">resolve</span>, <span class="pl-smi">reject</span>) <span class="pl-k">=&gt;</span> {
+        <span class="pl-c1">setTimeout</span>(resolve, duration);
+    })
+}
+
+<span class="pl-k">var</span> p <span class="pl-k">=</span> <span class="pl-en">timeout</span>(<span class="pl-c1">1000</span>).<span class="pl-en">then</span>(() <span class="pl-k">=&gt;</span> {
+    <span class="pl-k">return</span> <span class="pl-en">timeout</span>(<span class="pl-c1">2000</span>);
+}).<span class="pl-en">then</span>(() <span class="pl-k">=&gt;</span> {
+    <span class="pl-k">throw</span> <span class="pl-k">new</span> <span class="pl-en">Error</span>(<span class="pl-s"><span class="pl-pds">"</span>hmm<span class="pl-pds">"</span></span>);
+}).<span class="pl-en">catch</span>(<span class="pl-smi">err</span> <span class="pl-k">=&gt;</span> {
+    <span class="pl-k">return</span> <span class="pl-c1">Promise</span>.<span class="pl-c1">all</span>([<span class="pl-en">timeout</span>(<span class="pl-c1">100</span>), <span class="pl-en">timeout</span>(<span class="pl-c1">200</span>)]);
+})</pre></div>
+<p>More info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">MDN Promise</a></p>
+<h3><a id="user-content-reflect-api" class="anchor" href="#reflect-api" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reflect API</h3>
+<p>Full reflection API exposing the runtime-level meta-operations on objects.  This is effectively the inverse of the Proxy API, and allows making calls corresponding to the same meta-operations as the proxy traps.  Especially useful for implementing proxies.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-c"><span class="pl-c">//</span> No sample yet</span></pre></div>
+<p>More info: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect">MDN Reflect</a></p>
+<h3><a id="user-content-tail-calls" class="anchor" href="#tail-calls" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Tail Calls</h3>
+<p>Calls in tail-position are guaranteed to not grow the stack unboundedly.  Makes recursive algorithms safe in the face of unbounded inputs.</p>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">function</span> <span class="pl-en">factorial</span>(<span class="pl-smi">n</span>, <span class="pl-smi">acc</span> <span class="pl-k">=</span> <span class="pl-c1">1</span>) {
+    <span class="pl-s"><span class="pl-pds">'</span>use strict<span class="pl-pds">'</span></span>;
+    <span class="pl-k">if</span> (n <span class="pl-k">&lt;=</span> <span class="pl-c1">1</span>) <span class="pl-k">return</span> acc;
+    <span class="pl-k">return</span> <span class="pl-en">factorial</span>(n <span class="pl-k">-</span> <span class="pl-c1">1</span>, n <span class="pl-k">*</span> acc);
+}
+
+<span class="pl-c"><span class="pl-c">//</span> Stack overflow in most implementations today,</span>
+<span class="pl-c"><span class="pl-c">//</span> but safe on arbitrary inputs in ES6</span>
+<span class="pl-en">factorial</span>(<span class="pl-c1">100000</span>)</pre></div>
+</article>
+  </div>
+
+
+  </div>
+  <div class="modal-backdrop js-touch-events"></div>
+</div>
+
+
+
+
+    </div>
+  </div>
+
+  </div>
+
+      <div class="container site-footer-container">
+  <div class="site-footer" role="contentinfo">
+    <ul class="site-footer-links float-right">
+        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact GitHub</a></li>
+      <li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+
+    </ul>
+
+    <a href="https://github.com" aria-label="Homepage" class="site-footer-mark" title="GitHub">
+      <svg aria-hidden="true" class="octicon octicon-mark-github" height="24" version="1.1" viewBox="0 0 16 16" width="24"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+</a>
+    <ul class="site-footer-links">
+      <li>&copy; 2017 <span title="0.13980s from github-fe158-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+        <li><a href="https://help.github.com" data-ga-click="Footer, go to help, text:help">Help</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+  
+
+  <div id="ajax-error-message" class="ajax-error-message flash flash-error">
+    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
+    <button type="button" class="flash-close js-flash-close js-ajax-error-dismiss" aria-label="Dismiss error">
+      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+    </button>
+    You can't perform that action at this time.
+  </div>
+
+
+    <script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/compat-4d714ea7f9dadaae5639b6071575f464f3724e42c874b9868d59e831b52944d0.js"></script>
+    <script crossorigin="anonymous" src="https://assets-cdn.github.com/assets/frameworks-98ac987e4213944e72be21a9a412be5fd96d2b952083b850e8fd248f05d9796a.js"></script>
+    <script async="async" crossorigin="anonymous" src="https://assets-cdn.github.com/assets/github-f6463e083942e277a8527c46fc606104e83113ec2037e9bc45037dae089b3020.js"></script>
+    
+    
+    
+    
+  <div class="js-stale-session-flash stale-session-flash flash flash-warn flash-banner d-none">
+    <svg aria-hidden="true" class="octicon octicon-alert" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M8.865 1.52c-.18-.31-.51-.5-.87-.5s-.69.19-.87.5L.275 13.5c-.18.31-.18.69 0 1 .19.31.52.5.87.5h13.7c.36 0 .69-.19.86-.5.17-.31.18-.69.01-1L8.865 1.52zM8.995 13h-2v-2h2v2zm0-3h-2V6h2v4z"/></svg>
+    <span class="signed-in-tab-flash">You signed in with another tab or window. <a href="">Reload</a> to refresh your session.</span>
+    <span class="signed-out-tab-flash">You signed out in another tab or window. <a href="">Reload</a> to refresh your session.</span>
+  </div>
+  <div class="facebox" id="facebox" style="display:none;">
+  <div class="facebox-popup">
+    <div class="facebox-content" role="dialog" aria-labelledby="facebox-header" aria-describedby="facebox-description">
+    </div>
+    <button type="button" class="facebox-close js-facebox-close" aria-label="Close modal">
+      <svg aria-hidden="true" class="octicon octicon-x" height="16" version="1.1" viewBox="0 0 12 16" width="12"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48z"/></svg>
+    </button>
+  </div>
+</div>
+
+
+  </body>
+</html>
+

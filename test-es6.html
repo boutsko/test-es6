@@ -31,6 +31,7 @@
      const { one } = foo
 
 
+	 
      // test block
 
      assert(true,"*Testing Babel*");
@@ -38,7 +39,19 @@
      assert( getMessageWithArgument(world()) == 'Hello World', world() + " run babel");
      assert( one == "odin", " Test deconstruction");
 
-     // end of test block
+	 const evens = [2, 4, 6, 8]
+	 
+	 assert(true,"*const evens = [2, 4, 6, 8]*");
+
+	 var odds = evens.map(v => v + 1);
+	 assert( odds == "3,5,7,9", odds + " test odds");
+
+	 var nums = evens.map((v, i) => v + i); // i is increment 1,2,3...
+	 assert( nums.length == 4 && typeof(nums) == "object" && nums == "2,5,8,11", nums + " test nums array"); //don't get why "2,5,8,11"
+
+	 var pairs = evens.map(v => ({even: v, odd: v + 1}));
+	 assert( pairs == [{even: 2, odd: 3}, {even: 4, odd: 5}, {even: 6, odd: 7}, {even: 8, odd: 9}], "figure pairs") 
+
     </script>
 
   </body>

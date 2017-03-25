@@ -1,0 +1,767 @@
+
+
+<!doctype html>
+<html lang="en-US">
+<head data-template-path="https://hacks.mozilla.org/wp-content/themes/Hax">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Metadata for Facebook -->
+  <meta property="og:site_name" content="Mozilla Hacks &#8211; the Web developer blog">
+  <meta property="og:url" content="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/">
+  <meta property="og:title" content="ES6 In Depth: Arrow functions">
+  <meta property="og:description" content="ES6 In Depth is a series on new features being added to the JavaScript programming language in the 6th Edition of the ECMAScript standard, ES6 ...">
+
+  <!-- Metadata for Twitter -->
+  <meta property="twitter:title" content="ES6 In Depth: Arrow functions">
+  <meta property="twitter:description" content="ES6 In Depth is a series on new features being added to the JavaScript programming language in the 6th Edition of the ECMAScript standard, ES6 ...">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@mozhacks">
+
+  <link rel="alternate" type="application/rss+xml" title="Mozilla Hacks &#8211; the Web developer blog RSS Feed" href="https://hacks.mozilla.org/feed/">
+
+  <link href='//fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+  <link href="//addons.cdn.mozilla.net/static/css/tabzilla/tabzilla.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://2r4s9p1yi1fa2jd7j43zph8r-wpengine.netdna-ssl.com/wp-content/themes/Hax/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://2r4s9p1yi1fa2jd7j43zph8r-wpengine.netdna-ssl.com/wp-content/themes/Hax/style.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/highlight.js/8.6.0/styles/solarized_light.min.css">
+
+  <title>  ES6 In Depth: Arrow functions &#x2605;
+        Mozilla Hacks &#8211; the Web developer blog  </title>
+
+  <script type="text/javascript">
+    window.hacks = {};
+    // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+    var removeUtms  =   function(){
+        var l = window.location;
+        if( l.hash.indexOf( "utm" ) != -1 ){
+            var anchor = l.hash.match(/#(?!utm)[^&]+/);
+            anchor  =   anchor? anchor[0]: '';
+            if(!anchor && window.history.replaceState){
+                history.replaceState({},'', l.pathname + l.search);
+            } else {
+                l.hash = anchor;
+            }
+        };
+    };
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35433268-8'],
+              ['_setAllowAnchor', true]);
+    _gaq.push (['_gat._anonymizeIp']);
+    _gaq.push(['_trackPageview']);
+    _gaq.push( removeUtms );
+    (function(d, k) {
+      var ga = d.createElement(k); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = 'https://ssl.google-analytics.com/ga.js';
+      var s = d.getElementsByTagName(k)[0]; s.parentNode.insertBefore(ga, s);
+    })(document, 'script');
+  </script>
+
+  <link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Mozilla Hacks - the Web developer blog &raquo; ES6 In Depth: Arrow functions Comments Feed" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/feed/" />
+<link rel='stylesheet' id='wp-syntax-css-css'  href='https://2r4s9p1yi1fa2jd7j43zph8r-wpengine.netdna-ssl.com/wp-content/plugins/wp-syntax/css/wp-syntax.css?ver=1.1' type='text/css' media='all' />
+<script type='text/javascript' src='https://2r4s9p1yi1fa2jd7j43zph8r-wpengine.netdna-ssl.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='https://2r4s9p1yi1fa2jd7j43zph8r-wpengine.netdna-ssl.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='https://2r4s9p1yi1fa2jd7j43zph8r-wpengine.netdna-ssl.com/wp-content/themes/Hax/js/analytics.js?ver=4.7.3'></script>
+<script type='text/javascript' src='https://2r4s9p1yi1fa2jd7j43zph8r-wpengine.netdna-ssl.com/wp-content/themes/Hax/js/socialshare.min.js?ver=4.7.3'></script>
+<link rel='https://api.w.org/' href='https://hacks.mozilla.org/wp-json/' />
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://hacks.mozilla.org/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://hacks.mozilla.org/wp-includes/wlwmanifest.xml" /> 
+<link rel='prev' title='Firefox multistream and renegotiation for Jitsi Videobridge' href='https://hacks.mozilla.org/2015/06/firefox-multistream-and-renegotiation-for-jitsi-videobridge/' />
+<link rel='next' title='The state of Web Components' href='https://hacks.mozilla.org/2015/06/the-state-of-web-components/' />
+<link rel="canonical" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/" />
+<link rel='shortlink' href='https://hacks.mozilla.org/?p=28939' />
+<link rel="alternate" type="application/json+oembed" href="https://hacks.mozilla.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhacks.mozilla.org%2F2015%2F06%2Fes6-in-depth-arrow-functions%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://hacks.mozilla.org/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhacks.mozilla.org%2F2015%2F06%2Fes6-in-depth-arrow-functions%2F&#038;format=xml" />
+            <script type="text/javascript">
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-36116321-4', 'auto');
+                ga('set', 'dimension1', 'Mozilla Hacks - the Web developer blog');
+                ga('send', 'pageview');
+            </script><link rel="shortcut icon" type="image/x-icon" href="https://2r4s9p1yi1fa2jd7j43zph8r-wpengine.netdna-ssl.com/wp-content/themes/Hax/favicon.ico" /><style>#wpadminbar #wp-admin-bar-site-name>.ab-item:before { content: none !important;}li#wp-admin-bar-site-name a { background: url( "https://2r4s9p1yi1fa2jd7j43zph8r-wpengine.netdna-ssl.com/wp-content/themes/Hax/favicon.ico" ) left center/20px no-repeat !important; padding-left: 21px !important; background-size: 20px !important; } li#wp-admin-bar-site-name { margin-left: 5px !important; } li#wp-admin-bar-site-name {} #wp-admin-bar-site-name div a { background: none !important; }
+</style></head>
+<body>
+  <div class="outer-wrapper">
+    <header class="section section--fullwidth header">
+      <div class="masthead row">
+        <div id="tabzilla">
+          <a href="https://www.mozilla.org/">Mozilla</a>
+        </div>
+        <div class="branding block block--3">
+          <h1><a href="https://hacks.mozilla.org"><img src="https://2r4s9p1yi1fa2jd7j43zph8r-wpengine.netdna-ssl.com/wp-content/themes/Hax/img/mdn-logo-mono.svg" alt="Mozilla"><span>Hac<span class="logo-askew">k</span>s</span></a></h1>
+        </div>
+        <div class="search block block--2">
+          <form class="search__form" method="get" action="https://hacks.mozilla.org/">
+            <input type="search" name="s" class="search__input" placeholder="Search Mozilla Hacks" value="">
+            <i class="fa fa-search search__badge"></i>
+          </form>
+        </div>
+        <nav class="social">
+          <a class="social__link youtube" href="http://www.youtube.com/user/mozhacks" title="YouTube"><i class="fa fa-youtube"></i><span>Hacks on YouTube</span></a>
+          <a class="social__link twitter" href="https://twitter.com/mozhacks" title="Twitter"><i class="fa fa-twitter"></i><span>@mozhacks on Twitter</span></a>
+          <a class="social__link rss" href="https://hacks.mozilla.org/feed/" title="RSS Feed"><i class="fa fa-rss"></i><span>Hacks RSS Feed</span></a>
+        </nav>
+      </div>
+    </header>
+
+  
+<div id="content-head" class="section">
+  <h1 class="post__title">ES6 In Depth: Arrow functions</h1>
+  <div class="byline">
+    <h3 class="post__author">
+                      <img alt='' src='https://secure.gravatar.com/avatar/5a83f46f9f97d184457cb2dedfa19173?s=64&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/5a83f46f9f97d184457cb2dedfa19173?s=128&amp;d=mm&amp;r=g 2x' class='avatar avatar-64 photo' height='64' width='64' />        By
+                                        <a class="url" href="https://blog.mozilla.org/jorendorff/" rel="external me">Jason Orendorff</a>                            </h2>
+    <div class="post__meta">
+      Posted on
+      <abbr class="published" title="2015-06-04T16:25:41-07:00">
+        June 4, 2015      </abbr>
+      <span class="entry-cat">in
+        <a href="https://hacks.mozilla.org/category/es6-in-depth/" rel="category tag" title="View all posts in ES6 In Depth" >ES6 In Depth</a>, <a href="https://hacks.mozilla.org/category/featured/" rel="category tag" title="View all posts in Featured Article" >Featured Article</a>,  and <a href="https://hacks.mozilla.org/category/javascript/" rel="category tag" title="View all posts in JavaScript" >JavaScript</a>      </span>
+            <div class="socialshare" data-type="bubbles"></div>
+    </div>
+  </div>
+</div>
+
+<main id="content-main" class="section article">
+  <article class="post" role="article">
+    <p><i><a href="https://hacks.mozilla.org/category/es6-in-depth/" target="_blank">ES6 In Depth</a> is a series on new features being added to the JavaScript programming language in the 6th Edition of the ECMAScript standard, ES6 for short.</i></p>
+<p>Arrows have been part of JavaScript from the very beginning. The first JavaScript tutorials advised wrapping inline scripts in HTML comments. This would prevent browsers that <em>didn’t</em> support JS from erroneously displaying your JS code as text. You would write something like this:</p>
+<pre><code>&lt;script language="javascript"&gt;
+&lt;!--
+  document.bgColor = "brown";  // red
+// --&gt;
+&lt;/script&gt;
+</code></pre>
+<p>Old browsers would see two unsupported tags and a comment; only new browsers would see JS code.</p>
+<p>To support this odd hack, the JavaScript engine in your browser treats the characters <code>&lt;!--</code> as the start of a one-line comment. No joke. This has really been part of the language all along, and it works to this day, not just at the top of an inline <code>&lt;script&gt;</code> but everywhere in JS code. It even works in Node.</p>
+<p>As it happens, <a href="http://people.mozilla.org/~jorendorff/es6-draft.html#sec-html-like-comments" target="_blank">this style of comment is standardized for the first time in ES6.</a> But this isn’t the arrow we’re here to talk about.</p>
+<p>The arrow sequence <code>--&gt;</code> also denotes a one-line comment. Weirdly, while in HTML characters <em>before</em> the <code>--&gt;</code> are part of the comment, in JS the rest of the line <em>after</em> the <code>--&gt;</code> is a comment.</p>
+<p>It gets stranger. This arrow indicates a comment <em>only</em> when it appears at the start of a line. That’s because in other contexts, <code>--&gt;</code> is an operator in JS, the “goes to” operator!</p>
+<pre><code>function countdown(n) {
+  while (n --&gt; 0)  // "n goes to zero"
+    alert(n);
+  blastoff();
+}
+</code></pre>
+<p><a href="http://codepen.io/anon/pen/oXZaBY?editors=001" target="_blank">This code really works.</a> The loop runs until <var>n</var> gets to 0. This too is <em>not</em> a new feature in ES6, but a combination of familiar features, with a little misdirection thrown in. Can you figure out what’s going on here? As usual, the answer to the puzzle can be found <a href="http://stackoverflow.com/questions/1642028/what-is-the-name-of-the-operator" target="_blank">on Stack Overflow</a>.</p>
+<p>Of course there is also the less-than-or-equal-to operator, <code>&lt;=</code>. Perhaps you can find more arrows in your JS code, Hidden Pictures style, but let’s stop here and observe that <em>an arrow is missing</em>.</p>
+<table style="margin-left: auto; margin-right: auto;">
+<tbody>
+<tr>
+<td><code>&lt;!--</code></td>
+<td>single-line comment</td>
+</tr>
+<tr>
+<td><code>--&gt;</code></td>
+<td>“goes to” operator</td>
+</tr>
+<tr>
+<td><code>&lt;=</code></td>
+<td>less than or equal to</td>
+</tr>
+<tr>
+<td><code>=&gt;</code></td>
+<td>???</td>
+</tr>
+</tbody>
+</table>
+<p>What happened to <code>=&gt;</code>? Today, we find out.</p>
+<p>First, let’s talk a bit about functions.</p>
+<h3>Function expressions are everywhere</h3>
+<p>A fun feature of JavaScript is that any time you need a function, you can just type that function right in the middle of running code.</p>
+<p>For example, suppose you are trying to tell the browser what to do when the user clicks on a particular button. You start typing:</p>
+<pre><code>$("#confetti-btn").click(
+</code></pre>
+<p>jQuery’s <code>.click()</code> method takes one argument: a function. No problem. You can just type in a function right here:</p>
+<pre><code>$("#confetti-btn").click(function (event) {
+  playTrumpet();
+  fireConfettiCannon();
+});
+</code></pre>
+<p>Writing code like this comes quite naturally to us now. So it’s strange to recall that before JavaScript popularized this kind of programming, many languages <em>did not have this feature</em>. Of course Lisp had function expressions, also called <dfn>lambda functions</dfn>, in 1958. But C++, Python, C#, and Java all existed for years without them.</p>
+<p>Not anymore. All four have lambdas now. Newer languages universally have lambdas built in. We have JavaScript to thank for this—and early JavaScript programmers who fearlessly built libraries that depended heavily on lambdas, leading to widespread adoption of the feature.</p>
+<p>It is just slightly sad, then, that of all the languages I’ve mentioned, JavaScript’s syntax for lambdas has turned out to be the wordiest.</p>
+<pre><code>// A very simple function in six languages.
+function (a) { return a &gt; 0; } // JS
+[](int a) { return a &gt; 0; }  // C++
+(lambda (a) (&gt; a 0))  ;; Lisp
+lambda a: a &gt; 0  # Python
+a =&gt; a &gt; 0  // C#
+a -&gt; a &gt; 0  // Java
+</code></pre>
+<h3>A new arrow in your quiver</h3>
+<p>ES6 introduces a new syntax for writing functions.</p>
+<pre><code>// ES5
+var selected = allJobs.filter(<strong>function (job) {
+  return job.isSelected();
+}</strong>);
+
+// ES6
+var selected = allJobs.filter(<strong>job =&gt; job.isSelected()</strong>);
+</code></pre>
+<p>When you just need a simple function with one argument, the new arrow function syntax is simply <code><i>Identifier</i> =&gt; <i>Expression</i></code>. You get to skip typing <code>function</code> and <code>return</code>, as well as some parentheses, braces, and a semicolon.</p>
+<p>(I am personally very grateful for this feature. Not having to type <code>function</code> is important to me, because I inevitably type <code>functoin</code> instead and have to go back and correct it.)</p>
+<p>To write a function with multiple arguments (or no arguments, or <a href="https://hacks.mozilla.org/2015/05/es6-in-depth-rest-parameters-and-defaults/" target="_blank">rest parameters or defaults</a>, or a <a href="https://hacks.mozilla.org/2015/05/es6-in-depth-destructuring/" target="_blank">destructuring</a> argument) you’ll need to add parentheses around the argument list.</p>
+<pre><code>// ES5
+var total = values.reduce(<strong>function (a, b) {
+  return a + b;
+}</strong>, 0);
+
+// ES6
+var total = values.reduce(<strong>(a, b) =&gt; a + b</strong>, 0);
+</code></pre>
+<p>I think it looks pretty nice.</p>
+<p>Arrow functions work just as beautifully with functional tools provided by libraries, like <a href="http://underscorejs.org/" target="_blank">Underscore.js</a> and <a href="https://facebook.github.io/immutable-js/" target="_blank">Immutable</a>. In fact, the examples in <a href="https://facebook.github.io/immutable-js/docs/#/" target="_blank">Immutable’s documentation</a> are all written in ES6, so many of them already use arrow functions.</p>
+<p>What about not-so-functional settings? Arrow functions can contain a block of statements instead of just an expression. Recall our earlier example:</p>
+<pre><code>// ES5
+$("#confetti-btn").click(<strong>function (event)</strong> {
+  playTrumpet();
+  fireConfettiCannon();
+});
+</code></pre>
+<p>Here’s how it will look in ES6:</p>
+<pre><code>// ES6
+$("#confetti-btn").click(<strong>event =&gt;</strong> {
+  playTrumpet();
+  fireConfettiCannon();
+});
+</code></pre>
+<p>A minor improvement. The effect on code using <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank">Promises</a> can be more dramatic, as the <code>}).then(function (result) {</code> lines can pile up.</p>
+<p>Note that an arrow function with a block body does not automatically return a value. Use a <code>return</code> statement for that.</p>
+<p>There is one caveat when using arrow functions to create plain objects. Always wrap the object in parentheses:</p>
+<pre><code>// create a new empty object for each puppy to play with
+var chewToys = puppies.map(puppy =&gt; {});   // BUG!
+var chewToys = puppies.map(puppy =&gt; ({})); // ok
+</code></pre>
+<p>Unfortunately, an empty object <code>{}</code> and an empty block <code>{}</code> look exactly the same. The rule in ES6 is that <code>{</code> immediately following an arrow is always treated as the start of a block, never the start of an object. The code <code>puppy =&gt; {}</code> is therefore silently interpreted as an arrow function that does nothing and returns <code>undefined</code>.</p>
+<p>Even more confusing, an object literal like <code>{key: value}</code> looks exactly like a block containing a labeled statement—at least, that’s how it looks to your JavaScript engine. Fortunately <code>{</code> is the only ambiguous character, so wrapping object literals in parentheses is the only trick you need to remember.</p>
+<h3>What’s <code>this</code>?</h3>
+<p>There is one subtle difference in behavior between ordinary <code>function</code> functions and arrow functions. <strong>Arrow functions do not have their own <code>this</code> value.</strong> The value of <code>this</code> inside an arrow function is always inherited from the enclosing scope.</p>
+<p>Before we try and figure out what that means in practice, let’s back up a bit.</p>
+<p>How does <code>this</code> work in JavaScript? Where does its value come from? <a href="http://stackoverflow.com/questions/3127429/how-does-the-this-keyword-work" target="_blank">There’s no short answer.</a> If it seems simple in your head, it’s because you’ve been dealing with it for a long time!</p>
+<p>One reason this question comes up so often is that <code>function</code> functions receive a <code>this</code> value automatically, whether they want one or not. Have you ever written this hack?</p>
+<pre><code>{
+  ...
+  addAll: function addAll(pieces) {
+    var self = this;
+    _.each(pieces, function (piece) {
+      self.add(piece);
+    });
+  },
+  ...
+}
+</code></pre>
+<p>Here, what you’d <em>like</em> to write in the inner function is just <code>this.add(piece)</code>. Unfortunately, the inner function doesn’t inherit the outer function’s <code>this</code> value. Inside the inner function, <code>this</code> will be <code>window</code> or <code>undefined</code>. The temporary variable <code>self</code> serves to smuggle the outer value of <code>this</code> into the inner function. (Another way is to use <code>.bind(this)</code> on the inner function. Neither way is particularly pretty.)</p>
+<p>In ES6, <code>this</code> hacks mostly go away if you follow these rules:</p>
+<ul>
+<li>Use non-arrow functions for methods that will be called using the <code>object.method()</code> syntax. Those are the functions that will receive a <em>meaningful</em> <code>this</code> value from their caller.</li>
+<li>Use arrow functions for everything else.</li>
+</ul>
+<pre><code>// ES6
+{
+  ...
+  addAll: function addAll(pieces) {
+    _.each(pieces, piece =&gt; this.add(piece));
+  },
+  ...
+}
+</code></pre>
+<p>In the ES6 version, note that the <code>addAll</code> method receives <code>this</code> from its caller. The inner function is an arrow function, so it inherits <code>this</code> from the enclosing scope.</p>
+<p>As a bonus, ES6 also provides a shorter way to write methods in object literals! So the code above can be simplified further:</p>
+<pre><code>// ES6 with method syntax
+{
+  ...
+  addAll(pieces) {
+    _.each(pieces, piece =&gt; this.add(piece));
+  },
+  ...
+}
+</code></pre>
+<p>Between methods and arrows, I might never type <code>functoin</code> again. It’s a nice thought.</p>
+<p>There’s one more minor difference between arrow and non-arrow functions: arrow functions don’t get their own <code>arguments</code> object, either. Of course, in ES6, you’d probably rather use a rest parameter or default value anyway.</p>
+<h3>Using arrows to pierce the dark heart of computer science</h3>
+<p>We’ve talked about the many practical uses of arrow functions. There’s one more possible use case I’d like to talk about: ES6 arrow functions as a learning tool, to uncover something deep about the nature of computation. Whether that is practical or not, you’ll have to decide for yourself.</p>
+<p>In 1936, Alonzo Church and Alan Turing independently developed powerful mathematical models of computation. Turing called his model <em>a-machines</em>, but everyone instantly started calling them Turing machines. Church wrote instead about functions. His model was called the <a href="https://en.wikipedia.org/wiki/Lambda_calculus" target="_blank">λ-calculus</a>. (λ is the lowercase Greek letter lambda.) This work was the reason Lisp used the word <code>LAMBDA</code> to denote functions, which is why we call function expressions “lambdas” today.</p>
+<p>But what is the λ-calculus? What is “model of computation” supposed to mean?</p>
+<p>It’s hard to explain in just a few words, but here is my attempt: the λ-calculus is one of the first programming languages. It was not <em>designed</em> to be a programming language—after all, stored-program computers wouldn’t come along for another decade or two—but rather a ruthlessly simple, stripped-down, purely mathematical idea of a language that could express any kind of computation you wished to do. Church wanted this model in order to prove things about computation in general.</p>
+<p>And he found that he only needed one thing in his system: <em>functions.</em></p>
+<p>Think how extraordinary this claim is. Without objects, without arrays, without numbers, without <code>if</code> statements, <code>while</code> loops, semicolons, assignment, logical operators, or an event loop, it is possible to rebuild every kind of computation JavaScript can do, from scratch, using only functions.</p>
+<p>Here is an example of the sort of “program” a mathematician could write, using Church’s λ notation:</p>
+<pre><code>fix = λf.(λx.f(λv.x(x)(v)))(λx.f(λv.x(x)(v)))
+</code></pre>
+<p>The equivalent JavaScript function looks like this:</p>
+<pre><code>var fix = f =&gt; (x =&gt; f(v =&gt; x(x)(v)))
+               (x =&gt; f(v =&gt; x(x)(v)));
+</code></pre>
+<p>That is, JavaScript contains an implementation of the λ-calculus that actually runs. <em>The λ-calculus is in JavaScript.</em></p>
+<p>The stories of what Alonzo Church and later researchers did with the λ-calculus, and how it has quietly insinuated itself into almost every major programming language, are beyond the scope of this blog post. But if you’re interested in the foundations of computer science, or you’d just like to see how a language with nothing but functions can do things like loops and recursion, you could do worse than to spend some rainy afternoon looking into <a href="https://en.wikipedia.org/wiki/Church_encoding" target="_blank">Church numerals</a> and <a href="https://en.wikipedia.org/wiki/Fixed-point_combinator#Strict_fixed_point_combinator" target="_blank">fixed-point combinators</a>, and playing with them in your Firefox console or <a href="https://developer.mozilla.org/en-US/docs/Tools/Scratchpad" target="_blank">Scratchpad</a>. With ES6 arrows on top of its other strengths, JavaScript can reasonably claim to be the best language for exploring the λ-calculus.</p>
+<h3>When can I use arrows?</h3>
+<p>ES6 arrow functions were implemented in Firefox by me, back in 2013. Jan de Mooij made them fast. Thanks to Tooru Fujisawa and ziyunfei for patches.</p>
+<p>Arrow functions are also implemented in the Microsoft Edge preview release. They’re also available in <a href="http://babeljs.io/" target="_blank">Babel</a>, <a href="https://github.com/google/traceur-compiler#what-is-traceur" target="_blank">Traceur</a>, and <a href="http://www.typescriptlang.org/" target="_blank">TypeScript</a>, in case you’re interested in using them on the Web right now.</p>
+<p>Our next topic is one of the stranger features in ES6. We’ll get to see <code>typeof x</code> return a totally new value. We’ll ask: When is a name not a string? We’ll puzzle over the meaning of equality. It’ll be weird. So please join us next week as we look at ES6 symbols in depth.</p>
+    <section class="about">
+                                <h2 class="about__header">About
+                          <a class="url" href="https://blog.mozilla.org/jorendorff/" rel="external me">
+                Jason Orendorff              </a>
+                      </h3>
+                    <ul class="author-meta fa-ul"><li><i class="fa-li fa fa-globe"></i><a href="https://blog.mozilla.org/jorendorff/" class="website" rel="me">https://blog.mozilla.org/jorendorff/</a></li></ul>            <p><a class="url" href="https://hacks.mozilla.org/author/jorendorffmozillacom/">More articles by Jason Orendorff&hellip;</a></p>
+                  </section>
+  </article>
+  
+
+<section class="discussion">
+  <hr class="dino">
+  <div class="comments">
+    <header class="comments__head">
+      <h3>21 comments</h3>
+    </header>
+
+          <ol class="comments__list" class="hfeed">
+      
+ <li id="comment-17743" class="comment even thread-even depth-1">
+      <b class="comment__title vcard">
+      <cite class="author fn">Kyle Simpson</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>I think there are several things about arrow functions not mentioned here that should have been.</p>
+<p>1. all the new ES6 parameter forms, like default values, destructuring, rest params, etc&#8230; all those force you to use ( ) around the param list, even if only using the one param.</p>
+<p>2. arrow functions are anonymous, which means that you won&#8217;t have a self-bound lexical identifier to self-reference, for recursion, event handler unbinding, etc. Yes, ES6 has &#8220;name inference&#8221;, but that only assigns an internal .name property to the function object &#8212; it provides no lexical relief.</p>
+<p>Mixed in with a tad bit of light-hearted, well-meaning sarcasm, I&#8217;ve put all the decision paths for arrows into this flow chart:</p>
+<p><a href="https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20&#038;%20beyond/fig1.png" rel="nofollow">https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20&#038;%20beyond/fig1.png</a></p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17743" rel="bookmark" title="Permanent link to this comment by Kyle Simpson"><abbr class="published" title="2015-06-04">June 4th, 2015</abbr> at 17:34</a>
+
+      <p class="comment__util"> </p>
+  <ol class="children">
+
+ <li id="comment-17746" class="comment odd alt depth-2">
+      <b class="comment__title vcard">
+      <cite class="author fn">Simeon Vincent</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>FWIW, I&#8217;m not wild about the extreme-minimal syntax. As the flowchart says x = y =&gt; y; isn&#8217;t the most readable.</p>
+<p>That said, I *do* find x = (y) =&gt; { return y; }; to be quite clear. Especially when used in callbacks or promises.</p>
+<p>promise<br />
+  .then((resp) =&gt; {<br />
+    return resp.prop;<br />
+  })<br />
+  .catch((err) =&gt; {<br />
+    console.error(err);<br />
+  })</p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17746" rel="bookmark" title="Permanent link to this comment by Simeon Vincent"><abbr class="published" title="2015-06-04">June 4th, 2015</abbr> at 23:31</a>
+
+      <p class="comment__util"> </p>
+  <ol class="children">
+
+ <li id="comment-17826" class="comment even depth-3">
+      <b class="comment__title vcard">
+      <cite class="author fn">john</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>x = (y) =&gt; { return y; };</p>
+<p>How is that clear? I haven&#8217;t read the article yet (yes, I&#8217;m reading the comments first ;-) But this is the first time I can remember seeing some javascript that I can&#8217;t immediately understand. I read this as some variable x is equal the some variable y (though I&#8217;m not sure what the parens around the y means), and x and y are equal to or greater than a function that returns y. What? That is anything but clear.</p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17826" rel="bookmark" title="Permanent link to this comment by john"><abbr class="published" title="2015-06-12">June 12th, 2015</abbr> at 09:51</a>
+
+      <p class="comment__util"> </p>
+  <ol class="children">
+
+ <li id="comment-17896" class="comment odd alt depth-4">
+      <b class="comment__title vcard">
+      <cite class="author fn">Bergo</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>Comparison is `&gt;=`/&#8220; :-)</p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17896" rel="bookmark" title="Permanent link to this comment by Bergo"><abbr class="published" title="2015-06-23">June 23rd, 2015</abbr> at 20:31</a>
+
+      <p class="comment__util"> </p>
+  <ol class="children">
+
+ <li id="comment-17901" class="comment even depth-5">
+      <b class="comment__title vcard">
+      <cite class="author fn">Bergi</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>Ah, html syntax in comments. I meant to write</p>
+<p>Comparison is <code>&gt;=</code>/<code>&lt;=</code>, not <code>=&gt;</code> :-)</p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17901" rel="bookmark" title="Permanent link to this comment by Bergi"><abbr class="published" title="2015-06-24">June 24th, 2015</abbr> at 09:59</a>
+
+      <p class="comment__util"> </p>
+  </li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+
+ <li id="comment-17895" class="comment odd alt depth-3">
+      <b class="comment__title vcard">
+      <cite class="author fn">Bergi</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>Uh, clearly<br />
+<code>promise.then(resp =&gt; resp.prop).catch(console.error)</code><br />
+is much more readable than lengthy function expressions?</p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17895" rel="bookmark" title="Permanent link to this comment by Bergi"><abbr class="published" title="2015-06-23">June 23rd, 2015</abbr> at 20:30</a>
+
+      <p class="comment__util"> </p>
+  </li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+
+ <li id="comment-17748" class="comment even thread-odd thread-alt depth-1">
+      <b class="comment__title vcard">
+      <cite class="author fn">Blaise Kal</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>You can find a detailed browser/platform support table here: <a href="http://kangax.github.io/compat-table/es6/#arrow_functions" rel="nofollow">http://kangax.github.io/compat-table/es6/#arrow_functions</a></p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17748" rel="bookmark" title="Permanent link to this comment by Blaise Kal"><abbr class="published" title="2015-06-05">June 5th, 2015</abbr> at 01:40</a>
+
+      <p class="comment__util"> </p>
+  </li><!-- #comment-## -->
+
+ <li id="comment-17756" class="comment odd alt thread-even depth-1">
+      <b class="comment__title vcard">
+      <cite class="author fn">Julian Lamb</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>Jason, your ES6 in Depth articles are fantastic.  Keep up the good work!</p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17756" rel="bookmark" title="Permanent link to this comment by Julian Lamb"><abbr class="published" title="2015-06-05">June 5th, 2015</abbr> at 14:26</a>
+
+      <p class="comment__util"> </p>
+  </li><!-- #comment-## -->
+
+ <li id="comment-17758" class="comment even thread-odd thread-alt depth-1">
+      <b class="comment__title vcard">
+      <cite class="author fn">Karthick Siva</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>Thanks for the great post, jason.</p>
+<p>&#8220;There’s one more minor difference between arrow and non-arrow functions: arrow functions don’t get their own arguments object, either.&#8221;</p>
+<p>why? can you elaborate on this?</p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17758" rel="bookmark" title="Permanent link to this comment by Karthick Siva"><abbr class="published" title="2015-06-06">June 6th, 2015</abbr> at 05:55</a>
+
+      <p class="comment__util"> </p>
+  <ol class="children">
+
+ <li id="comment-17763" class="comment odd alt depth-2">
+      <b class="comment__title vcard">
+      <cite class="author fn">rbzl</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>Because &#8216;arguments&#8217; is also lexically bound like &#8216;this&#8217;</p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17763" rel="bookmark" title="Permanent link to this comment by rbzl"><abbr class="published" title="2015-06-07">June 7th, 2015</abbr> at 04:35</a>
+
+      <p class="comment__util"> </p>
+  </li><!-- #comment-## -->
+
+ <li id="comment-17764" class="comment byuser comment-author-jorendorffmozillacom bypostauthor even depth-2">
+      <b class="comment__title vcard">
+      <cite class="author fn">Jason Orendorff</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>The standard makes arrow functions inherit as much stuff as possible from the enclosing context.</p>
+<p>That rule covers both `this` and `arguments`, and also a few other values having to do with subclassing, which we&#8217;ll cover later on: `new.target` and the value used by `super`. Ordinary functions and methods have their own values for all of these; arrow functions inherit all of them from context.</p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17764" rel="bookmark" title="Permanent link to this comment by Jason Orendorff"><abbr class="published" title="2015-06-07">June 7th, 2015</abbr> at 05:08</a>
+
+      <p class="comment__util"> </p>
+  </li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+
+ <li id="comment-17765" class="comment odd alt thread-even depth-1">
+      <b class="comment__title vcard">
+      <cite class="author fn">Keith</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>Hmmm&#8230; I&#8217;ve never heard of the &#8220;goes to&#8221; operator (&#8211;&gt;).</p>
+<p>Could it be that n &#8211;&gt; 0 is really just n&#8211; &gt; 0 (n minus minus is greater than zero)?</p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17765" rel="bookmark" title="Permanent link to this comment by Keith"><abbr class="published" title="2015-06-07">June 7th, 2015</abbr> at 10:52</a>
+
+      <p class="comment__util"> </p>
+  <ol class="children">
+
+ <li id="comment-17771" class="comment byuser comment-author-jorendorffmozillacom bypostauthor even depth-2">
+      <b class="comment__title vcard">
+      <cite class="author fn">Jason Orendorff</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>It sure is. (That&#8217;s the &#8220;misdirection&#8221; the article refers to; if you click through to the StackOverflow answer, all is revealed.)</p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17771" rel="bookmark" title="Permanent link to this comment by Jason Orendorff"><abbr class="published" title="2015-06-08">June 8th, 2015</abbr> at 13:08</a>
+
+      <p class="comment__util"> </p>
+  </li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+
+ <li id="comment-17767" class="comment odd alt thread-odd thread-alt depth-1">
+      <b class="comment__title vcard">
+      <cite class="author fn">Karthick Siva</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>That clarifies my doubt. Thanks, looking forward to the future post.</p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17767" rel="bookmark" title="Permanent link to this comment by Karthick Siva"><abbr class="published" title="2015-06-07">June 7th, 2015</abbr> at 21:03</a>
+
+      <p class="comment__util"> </p>
+  </li><!-- #comment-## -->
+
+ <li id="comment-17803" class="comment even thread-even depth-1">
+      <b class="comment__title vcard">
+      <cite class="author fn">Mörre Noseshine</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>&gt; It is just slightly sad, then, that of all the languages I’ve mentioned, JavaScript’s syntax for lambdas has turned out to be the wordiest.</p>
+<p>I find it quite funny how different and often opposing forces are working on Javascript at the same time, and both succeeding too: On the one hand there is the faction that is annoyed by every single letter they have to type. On the other hand are the people who write the APIs, who are from the camp that wants have a complete description of what a function is doing right in its name, like URL.createObjectURL, getElementsByClassName, addEventLIstener etc. So the core language reduces character count to a minimum, but the APIs have been and still are going the opposite direction.</p>
+<p>Personally, I&#8217;m in the middle. I find &#8220;pure math&#8221; syntax where every letter counts and has great meaning as in Church&#8217;s lambda notation example in the article above quite tiring to parse (&#8220;by head&#8221;), but having source code with all those looooooong names for often-used trivial functionality equally so.</p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17803" rel="bookmark" title="Permanent link to this comment by Mörre Noseshine"><abbr class="published" title="2015-06-11">June 11th, 2015</abbr> at 05:13</a>
+
+      <p class="comment__util"> </p>
+  <ol class="children">
+
+ <li id="comment-17805" class="comment odd alt depth-2">
+      <b class="comment__title vcard">
+      <cite class="author fn">thinsoldier</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>The DOM Api isn&#8217;t exactly the same as the language. You can manipulate a DOM with php or python and you have to use the same api names in php or python as well (getElementsByClassName, etc) because it is an implementation of the DOM Standard.</p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17805" rel="bookmark" title="Permanent link to this comment by thinsoldier"><abbr class="published" title="2015-06-11">June 11th, 2015</abbr> at 11:55</a>
+
+      <p class="comment__util"> </p>
+  <ol class="children">
+
+ <li id="comment-17806" class="comment even depth-3">
+      <b class="comment__title vcard">
+      <cite class="author fn">Mörre Noseshine</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>&gt; The DOM Api isn’t exactly the same as the language. </p>
+<p>I did not claim it was. I am well aware of the difference. Thank you for the free education in basic web dev. I&#8217;m also eager to learn about multiplication of natural numbers, I hope to master that at some point in the future&#8230;</p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17806" rel="bookmark" title="Permanent link to this comment by Mörre Noseshine"><abbr class="published" title="2015-06-11">June 11th, 2015</abbr> at 12:07</a>
+
+      <p class="comment__util"> </p>
+  </li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+
+ <li id="comment-17831" class="comment odd alt depth-2">
+      <b class="comment__title vcard">
+      <cite class="author fn">Kyle Simpson</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>@Mörre</p>
+<p>I think your point about long API names is valid, but may I suggest some from the actual JS language itself, instead of the ones you listed which are actually from other standards bodies. I think it makes your point more effectively:</p>
+<p>Object.getOwnPropertyNames<br />
+Object.getOwnPropertySymbols<br />
+Object.getOwnPropertyDescriptor<br />
+Object.propertyIsEnumerable<br />
+&#8230;</p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17831" rel="bookmark" title="Permanent link to this comment by Kyle Simpson"><abbr class="published" title="2015-06-12">June 12th, 2015</abbr> at 11:02</a>
+
+      <p class="comment__util"> </p>
+  </li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+
+ <li id="comment-17833" class="comment even thread-odd thread-alt depth-1">
+      <b class="comment__title vcard">
+      <cite class="author fn">Mörre Noseshine</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>@Kyle Yes, thanks! While I&#8217;m aware (as I said above, a little miffed) that one is DOM the other one is JS I don&#8217;t really care *who* is responsible (I didn&#8217;t assign any &#8220;blame&#8221;, I think?), my point was what we are effectively seeing. In my code calls to DOM manipulating functions (which are not limited to the browser side), or &#8220;original JS&#8221; functions, or that of any other APIs incl. npm installed modules and other libs, all look the same and are happily mixed.</p>
+<p>My point was to point &#8211; without clear intention &#8211; to that strange mix of extreme brevity and very verbose function names all in one code.</p>
+<p>Okay, maybe my point was that pointing out that &#8220;here we can save 5 characters!&#8221; is not exactly relevant in practice. I think to remember that Douglas Crockford pointed out in one of his wonderful videos about Javascript, as an aside, that a lot of developers spend a lot of effort to save a few keystrokes when actually typing code is the least time spent during coding.</p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17833" rel="bookmark" title="Permanent link to this comment by Mörre Noseshine"><abbr class="published" title="2015-06-12">June 12th, 2015</abbr> at 11:19</a>
+
+      <p class="comment__util"> </p>
+  <ol class="children">
+
+ <li id="comment-17865" class="comment byuser comment-author-jorendorffmozillacom bypostauthor odd alt depth-2">
+      <b class="comment__title vcard">
+      <cite class="author fn">Jason Orendorff</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>This is a basically reasonable objection. When is brevity worth this kind of effort?</p>
+<p>Consider Smalltalk or Ruby. These would be totally different and very visually cluttered languages if blocks were written with some 17 extra characters each, right? They would be difficult to read and unpleasant to use.</p>
+<p>JavaScript is becoming just such a language. Function expressions are used for array processing, attaching code to user input events, I/O, loosely-coupled communication among parts within an app, asynchronous control flow, and more, and it&#8217;s just beginning. Function expressions are everywhere. They should have syntax that&#8217;s appropriate to the way they&#8217;re being used.</p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17865" rel="bookmark" title="Permanent link to this comment by Jason Orendorff"><abbr class="published" title="2015-06-16">June 16th, 2015</abbr> at 05:10</a>
+
+      <p class="comment__util"> </p>
+  </li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+
+ <li id="comment-17897" class="comment even thread-even depth-1">
+      <b class="comment__title vcard">
+      <cite class="author fn">Bergi</cite>
+    </b>
+  
+    
+    <blockquote class="comment__body">
+      <p>Nitpick: Your `this` example isn&#8217;t the best.  We don&#8217;t want to use Underscore&#8217;s `_.each` any more!<br />
+ES5 code:<br />
+ pieces.forEach(this.add, this);<br />
+ES6 code:<br />
+ for (let piece of pieces) this.add(piece);</p>
+<p>Maybe you could use an event listener, like<br />
+ this.el.onclick = e =&gt; this.add(e.timestamp);<br />
+or so</p>
+    </blockquote>
+
+    <a class="comment__meta" href="https://hacks.mozilla.org/2015/06/es6-in-depth-arrow-functions/#comment-17897" rel="bookmark" title="Permanent link to this comment by Bergi"><abbr class="published" title="2015-06-23">June 23rd, 2015</abbr> at 20:39</a>
+
+      <p class="comment__util"> </p>
+  </li><!-- #comment-## -->
+      </ol>
+      </div>
+
+<p class="comments__closed"><b>Comments are closed for this article.</b></p>
+
+
+</main><!-- /#content-main -->
+
+  
+
+    <footer class="footer section section--fullwidth">
+      <div class="row">
+        <p class="block block--1">
+          Except where otherwise noted, content on this site is licensed
+          under the
+          <a href="https://creativecommons.org/licenses/by-sa/3.0/" rel="license external">Creative Commons Attribution Share-Alike License v3.0</a>
+          or any later version.
+        </p>
+        <img class="footer__logo" alt="the Mozilla dino logo" src="https://2r4s9p1yi1fa2jd7j43zph8r-wpengine.netdna-ssl.com/wp-content/themes/Hax/img/dino.svg">
+      </div>
+    </footer>
+  </div>
+  <link rel='stylesheet' id='hljstheme-css'  href='https://2r4s9p1yi1fa2jd7j43zph8r-wpengine.netdna-ssl.com/wp-content/plugins/wp-code-highlightjs/styles/default.css?ver=0.5.17' type='text/css' media='all' />
+<script type='text/javascript' src='https://2r4s9p1yi1fa2jd7j43zph8r-wpengine.netdna-ssl.com/wp-content/plugins/wp-syntax/js/wp-syntax.js?ver=1.1'></script>
+<script type='text/javascript' src='https://2r4s9p1yi1fa2jd7j43zph8r-wpengine.netdna-ssl.com/wp-includes/js/wp-embed.min.js?ver=4.7.3'></script>
+<script type='text/javascript' src='https://2r4s9p1yi1fa2jd7j43zph8r-wpengine.netdna-ssl.com/wp-content/plugins/wp-code-highlightjs/highlight.common.pack.js?ver=0.5.17'></script>
+<script type='text/javascript' src='https://2r4s9p1yi1fa2jd7j43zph8r-wpengine.netdna-ssl.com/wp-content/plugins/wp-code-highlightjs/highlight.custom.pack.js?ver=0.5.17'></script>
+    <style>pre.hljs {padding: 5px;}
+pre.hljs code {}</style>
+    <script type="text/javascript">
+    (function($, window) {
+        var init_fn_flag = false;
+        var init_fn = (function() {
+            if (init_fn_flag)
+                return;
+            init_fn_flag = true;
+             hljs.configure({"tabReplace":"    "});
+            $('pre code').each(function(i, block) {
+                hljs.highlightBlock(block);
+            });
+        });
+        $(document).ready(init_fn);
+        $(window).on("load", init_fn);
+    })(jQuery, window);
+    </script>
+  <script>
+    // External links should open in a new tab.
+    (function () {
+      var postLinks = document.querySelectorAll('#content-main a');
+
+      var origin = location.origin;
+
+      for (var i = 0; i < postLinks.length; i++) {
+        var link = postLinks[i];
+        if (link.origin !== origin && !link.getAttribute('target')) {
+          link.setAttribute('target', '_blank');
+        }
+      }
+    })();
+
+    window.addEventListener('load', function () {
+      if (document.querySelector('#newsletterForm')) {
+        var script = document.createElement('script');
+        var path = document.head.getAttribute('data-template-path');
+        script.setAttribute('src', path + '/js/newsletter.js');
+        document.head.appendChild(script);
+      }
+    });
+  </script>
+</body>
+</html>

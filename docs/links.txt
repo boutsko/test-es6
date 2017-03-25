@@ -1,0 +1,5 @@
+
+/Users/sampai/Learn/JS/testing/test-es6.html
+
+https://babeljs.io/learn-es2015/#es6features
+https://github.com/lukehoban/es6features#readme
