@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Listing 3.3</title>
+    <script type="text/javascript" src="./scripts/assert.js"></script>
+    <link href="./styles/assert.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <script type="text/javascript">
+
+	function outer(){
+
+		var a = 1;
+
+		function inner(){ /* does nothing */ }
+
+		var b = 2;
+
+		if (a == 1) {
+			var c = 3;
+
+		}
+		
+// test block
+	  assert(true,"test");
+	  assert(typeof outer==='function',
+      "outer() is in scope");
+	  assert(typeof a==='number',
+      "a is in scope");
+	  assert(typeof inner==='function',
+      "inner() is in scope");
+	  assert(typeof b==='number',
+      "b is in scope");
+	  assert(typeof c==='number',
+      "c is in scope");
+// end of test block
+
+	}
+	outer();
+	  
+    </script>
+  </body>
+</html>
+
