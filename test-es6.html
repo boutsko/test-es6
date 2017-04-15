@@ -170,15 +170,32 @@
 	  * 	 }*/
 
 
+     //testing equality of arrays
+     const arrEqual = (a1, a2) => a1.length==a2.length && a1.every((v,i)=> v === a2[i])
+
+     const a1 = [1,2,3]
+     const a2 = [1,2,3]
+     
+     assert(arrEqual(a1, a2) == true, arrEqual(a1, a2) + " arrays tested with arrEqual are equial");
+
+     // using concat on arrays
 	 let arr1 = ['a', 'b', 'c'];
 	 let arr2 = ['d', 'e', 'f'];
 	 let arr3 = arr1.concat(arr2)
-	 
-	 //	 assert(arr3 === [ "a", "b", "c", "d", "e", "f" ], arr3 + " test concat")
-	 	 assert(arr3 === "a,b,c,d,e,f", arr3 + " test concat")
 
-	 // results in a new array [ "a", "b", "c", "d", "e", "f" ]
-	 
+     assert(arrEqual(arr3, ['a','b','c','d','e','f']) == true, "test concat")
+
+     //adding element to array
+     const combineElement2Array = (array, element) => {
+       return [
+         ...array,
+         ...element
+       ]
+     }
+     
+	 let arr5 = combineElement2Array(arr1, arr2);
+     assert(arrEqual(arr5, ['a','b','c','d','e','f']) == true, "test combineElement2Array")
+     
     </script>
 
   </body>
