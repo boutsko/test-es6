@@ -196,6 +196,11 @@
 	 let arr5 = combineElement2Array(arr1, arr2);
      assert(arrEqual(arr5, ['a','b','c','d','e','f']) == true, "test combineElement2Array")
      
+     //destructuring within the parameter list
+     var f = ([a, b] = [1, 2], {x: c} = {x: a + b}) => a + b + c;
+
+     assert(f() == 6, "test destructuring within the parameter list")
+     
     </script>
 
   </body>
